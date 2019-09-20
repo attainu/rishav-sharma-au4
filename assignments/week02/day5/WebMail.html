@@ -30,13 +30,11 @@ body {
 
 
 .column.side {
-  width: 25%;
-}
-
-
-.column.middle {
   width: 50%;
 }
+
+
+
 
 
 .row:after {
@@ -58,6 +56,21 @@ body {
     width: 100%;
   }
 }
+ul.b {
+  list-style-type: square;
+}
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 50px;
+}
 </style>
 </head>
 <body>
@@ -69,9 +82,37 @@ body {
 </div>
 
 <div class="row">
-  <div class="column side" style="background-color:#aaa;">Column</div>
-  <div class="column middle" style="background-color:#bbb;">Column</div>
-  <div class="column side" style="background-color:#ccc;">Column</div>
+  <div class="column side" style="background-color:#aaa;">
+        <ul class="b">
+                <li>Inbox</li>
+                <li>Sent</li>
+                <li>Drafts</li>
+                <li>Trashs</li>
+              </ul></div>
+
+  <div class="column side" style="background-color:#ccc;">
+        <table>
+                <tr>
+                  <th>From</th>
+                  <th>Subject</th>
+                  <th>Date</th>
+                </tr>
+                <tr>
+                  <td>Bill Gates</td>
+                  <td>Wellcome to Microsoft</td>
+                  <td>12 hours ago</td>
+                </tr>
+                <tr>
+                  <td>Steve Jobs</td>
+                  <td>wellcome to Apple</td>
+                  <td>12/12/2010</td>
+                </tr>
+                <tr>
+                  <td>rishav</td>
+                  <td>bmw</td>
+                  <td>1min ago</td>
+                </tr>
+              </table></div>
 </div>
 
 <div class="footer">
