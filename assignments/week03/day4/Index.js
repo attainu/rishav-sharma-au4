@@ -1,5 +1,5 @@
 //Write a Javascript function that takes an array and a value and search that value in the array.
-var name = ['Rishav','Sagar','Sandeep','Rohit','Ansal'];
+var nam = ['rishav','sagar','sandeep','rohit','nsal'];
 
 var searchArray = function(arrayName,vauleToSearch){
     var indexOfValue=arrayName.indexOf(vauleToSearch);
@@ -7,4 +7,4 @@ var searchArray = function(arrayName,vauleToSearch){
     
 };
 
-searchArray(name,'Akhil');
+searchArray(nam,'nsal');
