@@ -1,6 +1,6 @@
 function square()
 {
-    //var n = prompt ("Enter the limit 'n' to generate the table of numbers from 1 to 10");
+    var n = prompt ("Enter the limit 'n' to generate the table of numbers from 1 to 10");
     var msg="";
     var res="0";
 
