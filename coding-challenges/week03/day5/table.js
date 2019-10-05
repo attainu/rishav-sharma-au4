@@ -1,13 +1,35 @@
-function square()
-{
-    var n = prompt ("Enter the limit 'n' to generate the table of numbers from 1 to 10");
-    var msg="";
-    var res="0";
+var table = document.createElement("table");
 
-    for(var x=1; x<=10; x++)
-    {
-        res = x*x;
-        msg = msg + " " + x + " * " + x + " = " + res + "\n"; 
-    }
-    alert(msg);
+table.style.border = "1px solid box";
+table.style.width = "1500px";
+table.style.borderSpacing = "20px"
+
+table.classList.add("table", "table-striped");
+
+document.body.appendChild(table);
+
+for(var i = 1; i < 2; i++){
+    var tr = document.createElement("tr");
+    var th1 = document.createElement("th"); 
+    var th2 = document.createElement("th"); 
+    var text1 = document.createTextNode("Number");
+    var text2 = document.createTextNode("Square");
+    th1.appendChild(text1);
+    th2.appendChild(text2);
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    table.appendChild(tr);
+}
+
+for(var i = 1; i < 11; i++){
+    var tr = document.createElement("tr");
+    var th1 = document.createElement("th"); 
+    var th2 = document.createElement("th"); 
+    var text1 = document.createTextNode(i);
+    var text2 = document.createTextNode(Math.pow(i,2));
+    th1.appendChild(text1);
+    th2.appendChild(text2);
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    table.appendChild(tr);
 }

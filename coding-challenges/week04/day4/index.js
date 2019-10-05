@@ -25,7 +25,7 @@ $("#submit-btn").on('click', function() {
     $("#response-container ul").html("");
     for (var i = 0; i < city.length; i++) {
         if(city[i].name.charAt(0).toLowerCase() == searchForLetter){
-            $("#response-container ul").append('<li class="list-group-item"> cities: ' +city[i].name+ '</li>');
+            $("#response-container ul").appendChild('<li class="list-group-item"> cities: ' +city[i].name+ '</li>');
         }
     }
 });
