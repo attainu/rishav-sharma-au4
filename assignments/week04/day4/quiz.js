@@ -19,7 +19,7 @@ $.ajax({
         var obj = JSON.parse(data);
         var index = Math.floor(Math.random() * obj.length);
         
-        $('#question').html(obj[index].question);
+        $('#Question').html(obj[index].question);
 
         $('button').on('click',function() {
             if($('#answer').val().toLowerCase() == obj[index].answer.toLowerCase()) {

@@ -23,7 +23,7 @@ var searchForLetter;
 $("#submit-btn").on('click', function() {
     searchForLetter = searchField.nodeValue;
     $("#response-container ul").html("");
-    (for var i = 0; i < city.length; i++) {
+    for (var i = 0; i < city.length; i++) {
         if(city[i].name.charAt(0).toLowerCase() == searchForLetter){
             $("#response-container ul").append('<li class="list-group-item"> cities: ' +city[i].name+ '</li>');
         }
