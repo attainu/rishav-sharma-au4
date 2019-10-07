@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   height: 100%;
 }
 
@@ -13,31 +12,28 @@ body {
   background-color: #f5f5f5;
 }
 
-.form-signin {
+.form-Submit {
   width: 100%;
   max-width: 330px;
   padding: 15px;
   margin: auto;
 }
-.form-signin .checkbox {
-  font-weight: 400;
-}
-.form-signin .form-control {
+.form-Submit .form-control {
   position: relative;
   box-sizing: border-box;
   height: auto;
   padding: 10px;
   font-size: 16px;
 }
-.form-signin .form-control:focus {
+.form-Submit .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="email"] {
+.form-Submit input[type="UserName"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="password"] {
+.form-Submit input[type="Age"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
