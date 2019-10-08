@@ -1,0 +1,99 @@
+body {
+    width: 300px;
+    margin: 7% auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    
+  }
+  
+  .name{
+    color: azure;
+    font-size: 20px;
+    font: outline;
+  }
+  
+  .p{
+    color: rgb(236, 233, 233);
+  }
+  
+  
+  .input {
+    border: 15px solid rgb(198, 194, 231);
+    border-radius: 10px;
+    height: 400px;
+    padding-right: 15px;
+    padding-top: 10px;
+    text-align: right;
+    margin-right: 6px;
+    font-size: 1.2rem;
+   background-color: rgb(124, 159, 253);
+  }
+  
+  .input1{
+    color: rgb(29, 27, 27);
+    border: 9px solid rgb(248, 242, 242);
+    border-radius: 5px;
+    height: 20px;
+    padding-right: 15px;
+    padding-top: 10px;
+    text-align: right;
+    margin-right: 6px;
+    font-size: 1.2rem;
+   background-color: rgb(238, 238, 238);
+  }
+  
+  .input2{
+    color: rgb(29, 27, 27);
+    border: 9px solid rgb(248, 242, 242);
+    border-radius: 5px;
+    height: 20px;
+    padding-right: 15px;
+    padding-top: 10px;
+    text-align: right;
+    margin-right: 6px;
+    font-size: 1.2rem;
+   background-color: rgb(238, 238, 238);
+  }
+  
+  
+  .operators  {
+    display: inline-block;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    width: 50px;
+    text-align: center;
+    padding: 10px;
+    margin: 20px 4px 10px 0;
+    cursor: pointer;
+    background-color: #ddd;
+    transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+  }
+  
+  .operators hover {
+    background-color: #ddd;
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    border-color: #aaa;
+  }
+  
+  .operators active {
+    font-weight: bold;
+  }
+    
+  .input3{
+    color: rgb(29, 27, 27);
+    border: 9px solid rgb(248, 242, 242);
+    border-radius: 5px;
+    height: 20px;
+    padding-right: 15px;
+    padding-top: 10px;
+    text-align: right;
+    margin-right: 6px;
+    font-size: 1.2rem;
+   background-color: rgb(238, 238, 238);
+  }
+  
