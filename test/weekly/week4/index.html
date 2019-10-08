@@ -12,15 +12,21 @@
 </head>
 
 <body class="text-center">
+
     <form class="form-Submit">
     <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+    <div class="contrainer m-5">
     <label for="inputUserName" class="sr-only">UserName</label>
-    <input type="UserName" id="inputUserName" class="form-control" placeholder="UserName" name="UserName" required autofocus>
+    <input type="UserName" id="UserName" class="form-control" placeholder="UserName" name="UserName" required autofocus>
     <label for="inputAge" class="sr-only">Age</label>
-    <input type="Age" id="inputAge" class="form-control" placeholder="Age" name="Age" required>
+    <input type="Age" id="Age" class="form-control" placeholder="Age" name="Age" required>
+    </div>
     <br>
-    <button class="btn btn-lg btn-block btn-warning" type="submit">Submit</button>
+    <button class="btn btn-lg btn-block btn-warning" id="Submit" type="submit">Submit</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+    <div id="value">
+
+    </div>
     <script
     src="http://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
