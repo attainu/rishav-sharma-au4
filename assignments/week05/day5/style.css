@@ -1,0 +1,43 @@
+body {
+    background-color: azure;
+    background-image: url('http://photo-gallery.in/wp-content/uploads/2017/10/3D-Wallpaper-Red-Blue-Background-HD-Download-Red-Blue-Wallpaper-3D.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+figure {
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 220px;
+    margin: auto;
+}
+
+img {
+    max-width: 220px;
+    max-height: 150px;
+}
+
+figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+video {
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 850px;
+    margin: auto;
+}
+audio{
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+}
+h6 {
+    text-align: center;
+    font-style: italic;
+    color: #fff
+}
