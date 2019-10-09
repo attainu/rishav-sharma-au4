@@ -4,7 +4,7 @@ $(document).ready(function() {
     
     //assignment start
     $.ajax({
-        url:'./currency.json',
+        url:'http:/currency.json',
         success:function(data){
             console.log(data)
             var arr = Object.keys(data)
