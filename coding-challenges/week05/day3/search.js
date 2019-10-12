@@ -6,7 +6,7 @@ var books = [];
    method : "GET",
    datatype : "json",
    success: function(data) {
-       console.log(data);
+       //console.log(data);
       data = JSON.parse(data);
       for(var i = 0; i < data.length; i++){
           books.push(data[i]);
