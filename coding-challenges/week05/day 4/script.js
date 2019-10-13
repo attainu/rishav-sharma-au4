@@ -1,11 +1,14 @@
-var commonCharacters = function (str1,str2)
-{
-    var one = str.replace (/ /g,"");
-    var two = str.replace (/ /g,"");
-    for(var i=0;  i < one.length; i++){
-        if(two.indexof(one[i]) !== -1 && result.indexof(one[i]) === -1){
-            result.push(one[i]);
-        }
-    }
-    return result.join("");
-}
+//hammingDistance !!!
+var a="rishav"
+  var b="rishab"
+  count=0;
+  if(a.length==b.length){
+      for(var i=0;i<a.length;i++)
+      {
+          if(a[i]!=b[i])
+          {
+              count=count+1;
+          }
+      }
+      console.log(count);
+  }
