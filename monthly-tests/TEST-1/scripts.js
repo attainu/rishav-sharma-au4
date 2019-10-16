@@ -1,20 +1,20 @@
-var books = [];
+var data = [];
 
    $.ajax({
-     url : "./books.json",
+     url : "./data.json",
      method : "GET",
      datatype : "JSON",
      success: function(data) {
-       //console.log(data);
+       console.log(data);
       //data = JSON.parse(data);
       for(var i = 0; i < data.length; i++) {
-          books.push(data[i]);
+          data.push(data[i]);
           }
         }
    });
-   console.log(books);
+   console.log(data);
 
-   $("#submit-btn").on('click', function() {    
+   /*$("#submit-btn").on('click', function() {    
 
            $("tbody").html("");
 
@@ -27,4 +27,4 @@ var books = [];
 
             }
        }
-   });
+   });*/
