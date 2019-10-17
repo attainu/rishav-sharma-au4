@@ -3,7 +3,7 @@ var books = [];
    $.ajax({
      url : "./books.json",
      method : "GET",
-     datatype : "json",
+     datatype : "JSON",
      success: function(data) {
        //console.log(data);
       //data = JSON.parse(data);
