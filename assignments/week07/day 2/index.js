@@ -48,7 +48,7 @@ app.post('/calculate-square', function(req, res) {
 	app.post('/calculate-Add', function(req, res) {
 		var number1 = req.body['number-1'];
 		var number2 = req.body['number-2'];
-		var result = number1+number2;
+		var result = Number(number1) + Number(number2);
 	
 		res.json({
 			Add: result
