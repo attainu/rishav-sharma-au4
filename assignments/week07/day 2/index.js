@@ -39,15 +39,63 @@ app.post('/calculate-square', function(req, res) {
 
 	res.json({
 		square: result
-	})
+	});
+});
+	app.get('/calculate-Add', function(req, res) {
+		res.sendFile(__dirname + '/Add.html');
+	});
+	
+	app.post('/calculate-Add', function(req, res) {
+		var number1 = req.body['number-1'];
+		var number2 = req.body['number-2'];
+		var result = number1+number2;
+	
+		res.json({
+			Add: result
+		});
+	});
+		app.get('/calculate-Subtract', function(req, res) {
+			res.sendFile(__dirname + '/Subtract.html');
+		});
+		
+		app.post('/calculate-Subtract', function(req, res) {
+			var number1 = req.body['number-1'];
+			var number2 = req.body['number-2'];			
+			var result = number1 - number2;
+		
+			res.json({
+				Subtract: result
+			});
+		});
+			app.get('/calculate-Multiply', function(req, res) {
+				res.sendFile(__dirname + '/Multiply.html');
+			});
+			
+			app.post('/calculate-Multiply', function(req, res) {
+				var number1 = req.body['number-1'];
+				var number2 = req.body['number-2'];
+				var result = number1 * number2;
+			
+				res.json({
+					Multiply: result
+				});
+});
+app.get('/calculate-Divide', function(req, res) {
+	res.sendFile(__dirname + '/Divide.html');
+});
+
+app.post('/calculate-Divide', function(req, res) {
+	var number1 = req.body['number-1'];
+	var number2 = req.body['number-2'];
+	var result = number1 / number2;
+
+	res.json({
+		Divide: result
+	});
 });
 
 app.listen(PORT, function() {
 	console.log("Application has started and running on port: ", PORT);
 }).on('error', function(error) {
 	console.log("Unable to start app. Error >>>>", error);
-})
-
-// fs.readFile('file.txt', 'utf-8', function(error, data) {
-// 	console.log(chalk.yellow(data));
-// });
+});
