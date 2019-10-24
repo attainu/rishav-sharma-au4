@@ -1,33 +1,31 @@
-var nameList = ["Aahan","Aarav","Aayush","Abeer","Aditya","Agastya","Ahil","Angad","Ansh","Archit","Arjun","Arnav","Atharv","Ayaan",
-"Darsh","Dev","Dhruv","Hridaan","Hriday","Ishaan","Jashn","Kabir","Kahaan","Kartik","Kiaan","Lakshya","Mahir","Manav","Neel","Palash",
-"Param","Parth","Rajveer","Ranveer","Reyansh","Rudra","Samar","Sanay","Shaurya","Shiv","Shivaan","Siddharth","Varun","Ved","Veer",
-"Viaan","Vihaan","Yash","Yuvaan"]
-
-
-const fs = require('fs');
-const chalk = require('chalk');
 const express = require('express'); // function
 const app = express();
 const PORT = 9090;
 
-app.use(express.json());
-app.use(express.urlencoded());
-app.use('/static', express.static('public'));
-app.use('/',function(req,res){
-    res.sendFile(__dirname+'/index.html')
-})
-app.post('/result',function(req,res){
-    var output = req.body;
-    var resultList = [];
-    var outputLength = output.string.length;
-    nameList.forEach(function(data,index){
-        var result = data.substring(0, outputLength);
-        if(output.string.toLowerCase()===result.toLowerCase()){
-            resultList.push(data);
+//home route
+app.get('/',function(req,res){
+    res.send('WELCOME TO SEARCHINGPAGE');
+});
 
+
+app.get('/query?',function(req,res) {
+    console.log(req.query);
+    var letter = req.query.name;
+    
+    var names = ["Aahan","Aarav","Aayush","Abeer","Aditya","Agastya","Ahil","Angad","Ansh","Archit","Arjun","Arnav","Atharv","Ayaan",
+"Darsh","Dev","Dhruv","Hridaan","Hriday","Ishaan","Jashn","Kabir","Kahaan","Kartik","Kiaan","Lakshya","Mahir","Manav","Neel","Palash",
+"Param","Parth","Rajveer","Ranveer","Reyansh","Rudra","Samar","Sanay","Shaurya","Shiv","Shivaan","Siddharth","Varun","Ved","Veer",
+"Viaan","Vihaan","Yash","Yuvaan"]
+    
+    var result = [];
+    for(const name of names) {
+        var element = name.charAt(0).toLowerCase().concat(name.charAt(1),name.charAt(2));
+        if(element == letter) {
+            result.push(name);
         }
-    })
-    res.send(resultList);
+    }
+    console.log(result);
+    res.send(result);
 });
 
 app.listen(PORT, function() {
