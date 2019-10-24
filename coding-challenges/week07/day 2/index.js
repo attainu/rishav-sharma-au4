@@ -19,7 +19,7 @@ app.get('/query?',function(req,res) {
     
     var result = [];
     for(const name of names) {
-        var element = name.charAt(0).toLowerCase().concat(name.charAt(1),name.charAt(2));
+        var element = name.charAt(0).toLowerCase();
         if(element == letter) {
             result.push(name);
         }
