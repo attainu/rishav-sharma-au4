@@ -27,6 +27,13 @@ app.post('/login', function(req, res) {
 app.get('/login', function(req, res) {
 	res.sendFile(__dirname + '/login.html');
 });
+app.post('/register', function(req, res) {
+	console.log("POST DATA >>>>", req.body);
+});
+
+app.get('/register', function(req, res) {
+	res.sendFile(__dirname + '/register.html');
+});
 
 app.listen(PORT, function() {
 	console.log("Application has started and running on port: ", PORT);
