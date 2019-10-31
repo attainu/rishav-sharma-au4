@@ -6,33 +6,48 @@ var port = 9090;
 app.get('/', function (req, res) {
   res.send('Welcome to the calculator!')
 })
+app.use(express.json());
 
-app.get('/add', function (req, res) {
-  var num1 = parseInt(req.params.num1)
-  var num2 = parseInt(req.params.num2)
-  var Add = (num1 + num2).toString()
-  res.send(Add)
+app.post('/add', function (req, res) {
+  var num1 = req.body.num1
+  var num2 = req.body.num2
+  var result = Number(num1) + Number(num2)
+  res.json({
+    "num1": num1,
+    "num2": num2,
+    "result": result
+  })
+});
+
+app.post('/sub', function (req, res) {
+  var num1 = req.body.num1
+  var num2 = req.body.num2
+  var result = num1 - num2
+  res.json({
+    "num1": num1,
+    "num2": num2,
+    "result": result
+  })
 })
-
-app.get('/subtract', function (req, res) {
-  var num1 = parseInt(req.params.num1)
-  var num2 = parseInt(req.params.num2)
-  var subtraction = (num1 - num2).toString()
-  res.send(subtraction)
+app.post('/mul', function (req, res) {
+  var num1 = req.body.num1
+  var num2 = req.body.num2
+  var result = num1 * num2
+  res.json({
+    "num1": num1,
+    "num2": num2,
+    "result": result
+  })
 })
-
-app.get('/multiply', function (req, res) {
-  var num1 = parseInt(req.params.num1)
-  var num2 = parseInt(req.params.num2)
-  var multiply = (num1 * num2).toString()
-  res.send(multiply)
-})
-
-app.get('/divide', function (req, res) {
-  var num1 = parseInt(req.params.num1)
-  var num2 = parseInt(req.params.num2)
-  var divide = (num1 / num2).toString()
-  res.send(divide)
+app.post('/div', function (req, res) {
+  var num1 = req.body.num1
+  var num2 = req.body.num2
+  var result = num1 / num2
+  res.json({
+    "num1": num1,
+    "num2": num2,
+    "result": result
+  })
 })
 
 app.listen(port, function () {
