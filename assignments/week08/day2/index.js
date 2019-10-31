@@ -15,7 +15,7 @@ const hbs = exphbs.create({
 });
 
 // Import Book model
-var bookRoute = require('./routes/book.js');
+var bookRoute = require('./routes/books.js');
 
 // Register Handlebars as view engine
 app.engine('.hbs', hbs.engine);

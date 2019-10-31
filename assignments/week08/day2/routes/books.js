@@ -1,5 +1,5 @@
 const BookController = {};
-const Model = require('./../models/Book.js');
+const Model = require('./../models/Books.js');
 
 BookController.create = function(request, response) {
 	var name = request.body.name;

@@ -1,101 +1,42 @@
-const fs = require('fs');
-const chalk = require('chalk');
-const express = require('express'); // function
-const app = express();
-const PORT = 9090;
+const express = require('express')
+const app = express()
 
-app.use(express.json());
-app.use(express.urlencoded());
-app.use('/static', express.static('public'));
+var port = 9090;
 
-app.get('/', function(req, res) {
-	res.status(200).send("Hello World! This is the homepage.");
-});
+app.get('/', function (req, res) {
+  res.send('Welcome to the calculator!')
+})
 
-app.get('/hello', function(req, res) {
-	console.log("Query parameters >>>", req.query);
+app.get('/add', function (req, res) {
+  var num1 = parseInt(req.params.num1)
+  var num2 = parseInt(req.params.num2)
+  var Add = (num1 + num2).toString()
+  res.send(Add)
+})
 
-	var name = req.query.name;
+app.get('/subtract', function (req, res) {
+  var num1 = parseInt(req.params.num1)
+  var num2 = parseInt(req.params.num2)
+  var subtraction = (num1 - num2).toString()
+  res.send(subtraction)
+})
 
-	res.send(name);
-});
+app.get('/multiply', function (req, res) {
+  var num1 = parseInt(req.params.num1)
+  var num2 = parseInt(req.params.num2)
+  var multiply = (num1 * num2).toString()
+  res.send(multiply)
+})
 
-app.post('/sign-up', function(req, res) {
-	console.log("POST DATA >>>>", req.body);
-});
+app.get('/divide', function (req, res) {
+  var num1 = parseInt(req.params.num1)
+  var num2 = parseInt(req.params.num2)
+  var divide = (num1 / num2).toString()
+  res.send(divide)
+})
 
-app.get('/sign-up', function(req, res) {
-	res.sendFile(__dirname + '/sign-up.html');
-});
-
-app.get('/calculate-square', function(req, res) {
-	res.sendFile(__dirname + '/square.html');
-});
-
-app.post('/calculate-square', function(req, res) {
-	var number1 = req.body['number-1'];
-
-	var result = number1 * number1;
-
-	res.json({
-		square: result
-	});
-});
-	app.get('/calculate-Add', function(req, res) {
-		res.sendFile(__dirname + '/Add.html');
-	});
-	
-	app.post('/calculate-Add', function(req, res) {
-		var number1 = req.body['number-1'];
-		var number2 = req.body['number-2'];
-		var result = Number(number1) + Number(number2);
-	
-		res.json({
-			Add: result
-		});
-	});
-		app.get('/calculate-Subtract', function(req, res) {
-			res.sendFile(__dirname + '/Subtract.html');
-		});
-		
-		app.post('/calculate-Subtract', function(req, res) {
-			var number1 = req.body['number-1'];
-			var number2 = req.body['number-2'];			
-			var result = number1 - number2;
-		
-			res.json({
-				Subtract: result
-			});
-		});
-			app.get('/calculate-Multiply', function(req, res) {
-				res.sendFile(__dirname + '/Multiply.html');
-			});
-			
-			app.post('/calculate-Multiply', function(req, res) {
-				var number1 = req.body['number-1'];
-				var number2 = req.body['number-2'];
-				var result = number1 * number2;
-			
-				res.json({
-					Multiply: result
-				});
-});
-app.get('/calculate-Divide', function(req, res) {
-	res.sendFile(__dirname + '/Divide.html');
-});
-
-app.post('/calculate-Divide', function(req, res) {
-	var number1 = req.body['number-1'];
-	var number2 = req.body['number-2'];
-	var result = number1 / number2;
-
-	res.json({
-		Divide: result
-	});
-});
-
-app.listen(PORT, function() {
-	console.log("Application has started and running on port: ", PORT);
+app.listen(port, function () {
+  console.log('hey good news port has started.....',port);
 }).on('error', function(error) {
-	console.log("Unable to start app. Error >>>>", error);
+	console.log("Unable to start app Error >>>>", error);
 });
