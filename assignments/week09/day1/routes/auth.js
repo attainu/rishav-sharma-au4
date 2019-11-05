@@ -8,7 +8,7 @@ AuthController.login = function(request, response){
             "message": "loggedIn in the system"
         });
     }
-    AuthController.login = function(request, response){
+    AuthController.create = function(request, response){
     var username = request.body.username;
     var password = request.body.password;
     if(req.session.loggedIn) {

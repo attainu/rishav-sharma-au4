@@ -26,7 +26,7 @@ var authRoutes = require('./routes/auth.js')
 
 app.get('/login', authRoutes.login);
 //Add routes here
-app.post('/book/create', authRoutes.create);
+app.post('/create', authRoutes.create);
 app.get('/logout', authRoutes.logout);
 
 
