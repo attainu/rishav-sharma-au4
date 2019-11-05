@@ -11,7 +11,7 @@ AuthController.login = function(request, response){
     AuthController.create = function(request, response){
     var username = request.body.username;
     var password = request.body.password;
-    if(req.session.loggedIn) {
+    if(request.session.loggedIn) {
         model.create(username,password);
         response.json({
          status: true,
