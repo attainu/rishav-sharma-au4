@@ -1,7 +1,7 @@
 const Auth = {};
 
-Auth.create = function (username, password) {
-	console.log(`${password} created a book : ${username}`)
+Auth.create = function (name, author) {
+	console.log(`${author} created a book : ${name}`)
 
 }
 

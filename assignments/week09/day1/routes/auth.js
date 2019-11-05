@@ -9,10 +9,10 @@ AuthController.login = function(request, response){
         });
     }
     AuthController.create = function(request, response){
-    var username = request.body.username;
-    var password = request.body.password;
+    var name = request.body.name;
+    var author = request.body.author;
     if(request.session.loggedIn) {
-        model.create(username,password);
+        model.create(name,author);
         response.json({
          status: true,
         message: "successfully you logged in to create book"
