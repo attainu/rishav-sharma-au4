@@ -1,26 +1,26 @@
-const AuthController = {};
-var model = require('../models/Auth')
+var AuthController = {};
+var Model = require('../models/book')
 
 AuthController.login = function(request, response){
     request.session.loggedIn = true;
         response.json({
-            "status": true,
-            "message": "loggedIn in the system"
-        });
+            status : true,
+            message: "loggedIn in the system"
+        })
     }
     AuthController.create = function(request, response){
     var name = request.body.name;
     var author = request.body.author;
     if(request.session.loggedIn) {
-        model.create(name,author);
+        Model.create(name,author);
         response.json({
          status: true,
         message: "successfully you logged in to create book"
-    });
+    })
 } else {
     response.json({
-        "status": false,
-        "message": "please login to create book"
+        status: false,
+        message: "please login to create book"
     });
 }
     }
@@ -32,12 +32,17 @@ AuthController.logout = function(request, response) {
             } else {
                 response.clearCookie('reconnecting.com')
                 response.json({
-                    "status": true,
-                    "message": "Loggedout  very smartly"
+                    status: true,
+                    message: "Loggedout  very smartly"
                 });
             }
         });
+    }else{
+        response.json({
+            status: false,
+            message: "Logged out pheli fursat mai"
+        })
     }
-
 }
+
 module.exports = AuthController;
