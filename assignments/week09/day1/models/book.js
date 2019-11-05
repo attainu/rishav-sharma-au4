@@ -1,8 +1,8 @@
 const Book = {};
 
 Book.create = function (name, author) {
-	console.log(`${author} this author is wirtten this book : ${name}`)
+	console.log(`${author} =>this author is wirtten this book : ${name}`)
 
 }
 
-module.export = Book;
+module.exports = Book;

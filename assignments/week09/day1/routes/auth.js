@@ -1,5 +1,5 @@
 var AuthController = {};
-var Model = require('../models/book')
+var Model = require('./../models/book.js')
 
 AuthController.login = function(request, response){
     request.session.loggedIn = true;
