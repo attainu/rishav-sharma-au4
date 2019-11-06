@@ -7,24 +7,29 @@ const PORT = 9090;
 
 
 //import the controller
-var dataController = require('./routes/books');
+var books = require('./data/books.json');
 
-app.use(express.json());
-app.use(express.urlencoded());
-app.use('/static', express.static('public'));
 
 // Configure Handlebars
 const hbs = exphbs.create({
 	extname: '.hbs'
 });
 
-
 // Register Handlebars as view engine
 app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
+app.get('/query?', function(req,res){
+var data = books;
 
-app.get('/', dataController.search);
+var result = data.filter((book) => {
+	return book.language.toLowerCase() === req.query.language;
+});
+
+res.render('search',{
+	data: result
+});
+});
 
 
 // Start the app on pre defined port number

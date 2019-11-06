@@ -1,14 +1,7 @@
  <div class="jumbotron">
-            <div class="row">
-                <div class="col-md-6">
+            
                     <h2>Book Library</h2>
-                    <h6> Enter the Language</h6>
-                    <form action="/" method="GET">
-                        <input type="text" class="form-control" id="search-keyword" placeholder="E.g.,English" required>
-                    </form>
-                    <button type="button" id="submit-btn" class="btn btn-info" onclick="/">Submit</button>
-                </div>
-            </div>
+                
         </div>
         <div class="container-fluid">
             <div class="row">
@@ -25,11 +18,11 @@
                                     <th scope="col">Year</th> 
                             </tr>
                         </thead>
-                    </table>
+                    
                     <tbody>
                         {{#each data}}
                         <tr>
-                             <td>{{this.title}}</td>
+                             <th scope="row">{{this.title}}</th>
                              <td>{{this.author}}</td>
                              <td>{{this.country}}</td>
                              <td>{{this.language}}</td>
@@ -38,7 +31,8 @@
                              <td>{{this.year}}</td>
                         </tr>
                         {{/each}}
-                    </tbody>
+                    </tbody> 
+                    </table>
                 </div>
             </div>
-        </div>      
+        </div>
