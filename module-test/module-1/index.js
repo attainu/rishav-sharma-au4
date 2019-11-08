@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const express = require('express'); // function
 const app = express();
 const exphbs = require('express-handlebars');
@@ -38,8 +39,9 @@ MongoClient.connect(url, function(err, client) {
     }
     var db = client.db('eagle-rishav-sharma');
     var collection = db.collection('users');
-    collection.find({}, function(error, response){
+    collection.find({}).toArray (function(error, response){
         console.error(error);
+
         console.log(response);
 
     });
