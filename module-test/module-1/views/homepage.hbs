@@ -1,0 +1,14 @@
+ <div class="jumbotron">
+  <table class="table table-striped">
+    <tbody>
+        {{#each data}}
+                        <tr>
+                             <th scope="row">{{this.username}}</th>
+                             <td>{{this.name}}</td>
+                             <td>{{this.age}}</td>
+                             <td>{{this.city}}</td>
+                        </tr>
+          {{/each}}
+      </tbody> 
+     </table>
+</div>
