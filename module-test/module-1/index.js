@@ -6,8 +6,8 @@ const PORT = 9090;
 const MongoClient = require('mongodb').MongoClient;
 const csvtojson = require("csvtojson");
 const Filesystem = require("fs");
-var db;
-var collection;
+
+
 app.use(express.json());
 app.use(express.urlencoded());
 app.use('/static',express.static('public'));
@@ -46,7 +46,7 @@ MongoClient.connect(url,
     },
     (err, client) => {
         if (err) throw err;
-    client.db('eagle-rishav-sharma').collection("users")
+     client.db('eagle-rishav-sharma').collection("users")
     .insert(data, (err, res) => {
         if (err) throw err;
         console.log(`Inserted: ${res.insertedcount} rows`);
@@ -54,6 +54,13 @@ MongoClient.connect(url,
 
     });
   });
+});
+var db =null;
+MongoClient.connect(url, function(error, client){
+    if(error){
+        throw error;
+    }
+    db = client.db('eagle-rishav-sharma');
 });
 
 app.post('/users', function(req,res){
