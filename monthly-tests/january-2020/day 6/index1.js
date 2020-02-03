@@ -1,3 +1,4 @@
+//The program  run in O(n) space complexity and O(nodes) time complexity.
 var threeSum = function(nums) {
     var result = [];
     
@@ -36,3 +37,6 @@ var threeSum = function(nums) {
     return result;
 };
 console.log(threeSum([-1,0,1,2,-1,-4]));
+
+
+//The program run in O(1) space complexity and O(nodes) time complexity.

@@ -1,3 +1,4 @@
+//The program  run in O(n) space complexity and O(nodes) time complexity.
 var firstUniqChar = function(s) {
     var map= {};
       for (var i = 0; i < s.length; i++) {

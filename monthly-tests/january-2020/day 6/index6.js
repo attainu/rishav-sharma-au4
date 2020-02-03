@@ -1,3 +1,4 @@
+//The program  run in O(nlog) space complexity and O(nodes) time complexity.
 var longestCommonPrefix = function(strs) {
     var len = strs.length;
     var result = '';
