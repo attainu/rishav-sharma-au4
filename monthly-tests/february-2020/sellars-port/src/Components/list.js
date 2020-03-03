@@ -5,8 +5,8 @@ class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = {  
-        area: "",
-        category: "",
+        area: "All",
+        category: "All",
         status:"All"
       };
   }
@@ -24,17 +24,14 @@ class List extends React.Component {
         const currentday = () => {
           var today = new Date();
           var dd = today.getDate();
-    
           var mm = today.getMonth() + 1;
           var yyyy = today.getFullYear();
           if (dd < 10) {
             dd = "0" + dd;
           }
-    
           if (mm < 10) {
             mm = "0" + mm;
           }
-    
           today = yyyy + mm + dd;
           return today;
         };
@@ -46,6 +43,7 @@ class List extends React.Component {
         else return "Open";  
   }
   render() {
+      console.log(this.props.shops)
     return (
     <div>
         <span className="m1">
@@ -86,16 +84,29 @@ class List extends React.Component {
           </select>
         </span>
         <div>
-         <ul>
+         <table style={{width:'60%',border:'1px solid'}}>
+             <tr>
+                    <th>SHOP NAME</th>
+                    <th>AREA</th>
+                    <th>CATEGORY</th>
+                    <th>OPENING DATE</th>
+                    <th>CLOSING DATE</th>
+                    <th>STATUS</th>
+             </tr>
+         
          {
-          this.props.shops.map((shop,index)=>{
-              if(!this.state.area || ((this.state.area === shop.area && !this.state.category) || ((this.state.category === 
-                shop.category && this.state.status === "All") || (this.checkStatus(shop.closingDate) === this.state.status))))
-          return <li key={index}>{shop.shopName},{shop.area},{shop.category},{this.state.status},{shop.closingDate}</li>
-            return null;
-          })
+             this.props.shops.map(el=>
+                <tr>
+                    <td>{el.shopName}</td>
+                    <td>{el.area}</td>
+                    <td>{el.category}</td> 
+                    <td>{el.openingDate}</td>
+                    <td>{el.closingDate}</td>
+                    <th>{el.status}</th>
+                </tr>
+             )
          }     
-         </ul>
+         </table>
         </div>
     </div>
     )

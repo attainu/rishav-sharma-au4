@@ -8,8 +8,8 @@ class Input extends React.Component {
       shopName: "",
       openingDate: "",
       closingDate: "",
-      area: "",
-      category: ""
+      area: "Jayanagar",
+      category: "Grocery"
     };
   }
 
