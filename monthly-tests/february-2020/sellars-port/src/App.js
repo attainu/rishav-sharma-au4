@@ -42,11 +42,11 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <div id="shopName">
+        <span id="shopName">ShopName:
           <input type="text" placeholder="Shop Name" value={this.state.shop}
            onChange={(e) => this.setState({shop: e.target.value})} ></input>
-        </div>
-        <span id="areaSelector">
+        </span>
+        <span id="areaSelector">Area:
           <select id="area" onChange={(e) => this.setState({area: e.target.value})}>
           <option value="Area">Area</option>
             <option value="Jayanagar">Jayanagar</option>
@@ -59,7 +59,7 @@ class App extends Component {
             <option value="Girinagar">Girinagar</option>
           </select>
         </span>
-        <span id="shopCategory">
+        <span id="shopCategory">Category:
           <select id="category" onChange={(e) => this.setState({category: e.target.value})}>
           <option value="Category">Category</option>
             <option value="Grocery">Grocery</option>
