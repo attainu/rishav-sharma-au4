@@ -84,7 +84,7 @@ class List extends React.Component {
           </select>
         </span>
         <div>
-         <table style={{width:'60%',border:'1px solid'}}>
+         <table style={{width:'100%',border:'1px solid'}}>
              <tr>
                     <th>SHOP NAME</th>
                     <th>AREA</th>
