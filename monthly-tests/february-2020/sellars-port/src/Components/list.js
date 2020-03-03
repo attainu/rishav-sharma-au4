@@ -86,23 +86,23 @@ class List extends React.Component {
         <div>
          <table style={{width:'100%',border:'1px solid'}}>
              <tr>
-                    <th>SHOP NAME</th>
-                    <th>AREA</th>
-                    <th>CATEGORY</th>
-                    <th>OPENING DATE</th>
-                    <th>CLOSING DATE</th>
-                    <th>STATUS</th>
+                    <th style={{border:'1px solid'}}>SHOP NAME</th>
+                    <th style={{border:'1px solid'}}>AREA</th>
+                    <th style={{border:'1px solid'}}>CATEGORY</th>
+                    <th style={{border:'1px solid'}}>OPENING DATE</th>
+                    <th style={{border:'1px solid'}}>CLOSING DATE</th>
+                    <th style={{border:'1px solid'}}>STATUS</th>
              </tr>
          
          {
              this.props.shops.map(el=>
                 <tr>
-                    <td>{el.shopName}</td>
-                    <td>{el.area}</td>
-                    <td>{el.category}</td> 
-                    <td>{el.openingDate}</td>
-                    <td>{el.closingDate}</td>
-                    <th>{el.status}</th>
+                    <td style={{border:'1px solid'}}>{el.shopName}</td>
+                    <td style={{border:'1px solid'}}>{el.area}</td>
+                    <td style={{border:'1px solid'}}>{el.category}</td> 
+                    <td style={{border:'1px solid'}}>{el.openingDate}</td>
+                    <td style={{border:'1px solid'}}>{el.closingDate}</td>
+                    <th style={{border:'1px solid'}}>{el.status}</th>
                 </tr>
              )
          }     
