@@ -1,31 +1,56 @@
-//linked list
-class Linklist{
-    constructor(val){
-        this.data=val
-        this.next=null
+class Node{
+    constructor(value){
+        this.value = value;
+        this.next = null;
     }
 }
-const n=new Linklist(200)
-console.log(n);
-/* var removeElements = function(head, val) {
-    if(head === null){
-        return head;
+
+class LinkedList{
+    constructor(){
+        this.head = null;
+        this.tail = null;
     }
-    
-    var dummy = new ListNode(-1);
-    dummy.next = head;
-    prev = dummy;
-    cur = head;
-    
-    while(prev !== null && prev.next !== null){
-        if(cur.val === val) {
-            prev.next = cur.next;
-            cur = prev.next;
+
+    push(value) {
+        let node = new Node(value);
+        if(!this.head && !this.tail){
+            this.head = node;
+            this.tail = node;
         } else {
-            prev = cur;
-            cur = cur.next;
+            this.tail.next = node;
+            this.tail =node;
         }
     }
-    
-    return dummy.next;
-}; */
+    print() {
+        let current = this.head;
+        console.log(current);
+        while(current){
+            current = current.next;
+            
+            
+        }
+    }
+
+    remove(value) {
+       if(this.head.value == value) { this.head = this.head.next}
+       let current = this.head;
+       let prev;
+       while(current) {
+           if(current.next && current.next.value == value) {
+               current.next = current.next.next;
+           }
+           prev = current;
+           current = current.next;
+       }
+         this.tail = prev;
+    }
+}
+ let head =new LinkedList();
+ head.push(1);
+ head.push(2);
+ head.push(3);
+ head.push(4);
+ head.push(5);
+ head.push(6);
+ head.print();
+ head.remove(6);
