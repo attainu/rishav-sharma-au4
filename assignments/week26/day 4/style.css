@@ -1,0 +1,17 @@
+.wrapper {
+    position: absolute/fixed/relative/static;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.child.one {
+    font-size: 24px;
+    background-color: chartreuse;
+    text-decoration-color: silver;
+    flex-wrap: nowrap;
+}
+
