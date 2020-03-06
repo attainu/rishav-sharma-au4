@@ -59,7 +59,7 @@ class App extends Component {
         />
         {/*  */}
         
-        <select onChange={event => this.SetShowList(event)} id="day">
+        <select onChange={event => this.SetShowList(event)} id="city">
           <option value="all">All</option>
           <option value="0">Mumbai</option>
           <option value="1">Kolkata</option>
@@ -79,7 +79,7 @@ class App extends Component {
           Submit
         </button>
         <span>Element:Name:-{this.state.name},Email:-{this.state.email}</span>
-        <span>
+        <span><hr></hr>
           Name:-
           {
             namelist.map(el=><ul>{el}</ul>)
@@ -88,6 +88,11 @@ class App extends Component {
         <span>Email:-
           {
             emaillist.map(el=><ul>{el}</ul>)
+          }
+        </span>
+        <span>
+          {
+            
           }
         </span>
       </div>
