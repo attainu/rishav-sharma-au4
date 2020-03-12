@@ -14,17 +14,19 @@ class StaticData extends Component {
                     </thead>
                     <tbody>
                         {
-                            this.props.items.map(item => {
+                            this.props.items.map(item => (
                                 <tr key={item.id}>
                                     <td>{item.name}</td>
-                                    <td>{item.cost}</td>
+                                    <td>Rs-{item.cost}</td>
                                     <td>
-                                        <button className="btn btn-sucess">
+                                        <button className="btn btn-sucess"
+                                        value={item.id}
+                                        onClick={this.props.add}>
                                             Add To Cart
                                         </button>
                                     </td>
                                 </tr>
-                            })
+                            ))
                         }
                     </tbody>
                 </table>
