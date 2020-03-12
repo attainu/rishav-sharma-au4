@@ -1,0 +1,200 @@
+gaana=# create table  genres(
+gaana(# Name VARCHAR(50),
+gaana(# id BIGSERIAL NOT NULL PRIMARY KEY,
+gaana(# Origin VARCHAR(20) );
+CREATE TABLE
+gaana=# /d
+gaana-# \d
+              List of relations
+ Schema |     Name      |   Type   |  Owner
+--------+---------------+----------+----------
+ public | genres        | table    | postgres
+ public | genres_id_seq | sequence | postgres
+(2 rows)
+
+
+gaana-# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ gaana     | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ test      | postgres | UTF8     | English_India.1252 | English_India.1252 |
+(5 rows)
+
+
+gaana-# \d genres
+                                   Table "public.genres"
+ Column |         Type          | Collation | Nullable |              Default
+--------+-----------------------+-----------+----------+------------------------------------
+ name   | character varying(50) |           |          |
+ id     | bigint                |           | not null | nextval('genres_id_seq'::regclass)
+ origin | character varying(20) |           |          |
+Indexes:
+    "genres_pkey" PRIMARY KEY, btree (id)
+
+
+gaana-# create table awards ( id int PRIMARY key, name char(30),category text,reputation varchar(30) );
+ERROR:  syntax error at or near "/"
+LINE 1: /d
+        ^
+gaana=# create table awards ( id int PRIMARY key, name char(30),category text,reputation varchar(30) );
+CREATE TABLE
+gaana=# /l
+gaana-# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ gaana     | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ test      | postgres | UTF8     | English_India.1252 | English_India.1252 |
+(5 rows)
+
+
+gaana-# \d
+              List of relations
+ Schema |     Name      |   Type   |  Owner
+--------+---------------+----------+----------
+ public | awards        | table    | postgres
+ public | genres        | table    | postgres
+ public | genres_id_seq | sequence | postgres
+(3 rows)
+
+
+gaana-# \d awards
+                        Table "public.awards"
+   Column   |         Type          | Collation | Nullable | Default
+------------+-----------------------+-----------+----------+---------
+ id         | integer               |           | not null |
+ name       | character(30)         |           |          |
+ category   | text                  |           |          |
+ reputation | character varying(30) |           |          |
+Indexes:
+    "awards_pkey" PRIMARY KEY, btree (id)
+
+
+gaana-# create table producers ( id int PRIMARY key, name char(30),age int,company varchar(30) );
+ERROR:  syntax error at or near "/"
+LINE 1: /l
+        ^
+gaana=# create table producers ( id int PRIMARY key, name char(30),age int,company varchar(30) );
+CREATE TABLE
+gaana=# \d producers
+                     Table "public.producers"
+ Column  |         Type          | Collation | Nullable | Default
+---------+-----------------------+-----------+----------+---------
+ id      | integer               |           | not null |
+ name    | character(30)         |           |          |
+ age     | integer               |           |          |
+ company | character varying(30) |           |          |
+Indexes:
+    "producers_pkey" PRIMARY KEY, btree (id)
+
+
+gaana=# create table singers ( id int PRIMARY key, name varchar(30),age int,genre int references genres(id),awards int references awards(id) );
+CREATE TABLE
+gaana=# \d
+              List of relations
+ Schema |     Name      |   Type   |  Owner
+--------+---------------+----------+----------
+ public | awards        | table    | postgres
+ public | genres        | table    | postgres
+ public | genres_id_seq | sequence | postgres
+ public | producers     | table    | postgres
+ public | singers       | table    | postgres
+(5 rows)
+
+
+gaana=# \d singers
+                     Table "public.singers"
+ Column |         Type          | Collation | Nullable | Default
+--------+-----------------------+-----------+----------+---------
+ id     | integer               |           | not null |
+ name   | character varying(30) |           |          |
+ age    | integer               |           |          |
+ genre  | integer               |           |          |
+ awards | integer               |           |          |
+Indexes:
+    "singers_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    "singers_awards_fkey" FOREIGN KEY (awards) REFERENCES awards(id)
+    "singers_genre_fkey" FOREIGN KEY (genre) REFERENCES genres(id)
+
+
+gaana=# create table  songs(
+gaana(# id BIGSERIAL NOT NULL PRIMARY KEY,
+gaana(# Name VARCHAR(50),
+gaana(# Length float(2),
+gaana(#
+gaana(# ehtdbd
+gaana(# th)
+gaana-#
+gaana-# \d
+              List of relations
+ Schema |     Name      |   Type   |  Owner
+--------+---------------+----------+----------
+ public | awards        | table    | postgres
+ public | genres        | table    | postgres
+ public | genres_id_seq | sequence | postgres
+ public | producers     | table    | postgres
+ public | singers       | table    | postgres
+(5 rows)
+
+
+gaana-# create table albums ( id int PRIMARY key, name varchar(30),singer int references singers(id),producer int references producers(id),label varchar(30) );
+ERROR:  syntax error at or near "create"
+LINE 7: create table albums ( id int PRIMARY key, name varchar(30),s...
+        ^
+gaana=# create table albums ( id int PRIMARY key, name varchar(30),singer int references singers(id),producer int references producers(id),label varchar(30) );
+CREATE TABLE
+gaana=# CREATE TABLE songs ( id int PRIMARY KEY, name varchar(35), length float(2),year date, genre int referenses genres(id), singer int references(id), album int references albums(id));
+ERROR:  syntax error at or near "referenses"
+LINE 1: ...varchar(35), length float(2),year date, genre int referenses...
+                                                             ^
+gaana=# CREATE TABLE songs ( id int PRIMARY KEY, name varchar(35), length float(2),year date, genre int referenses genres(id), singer int references singers(id), album int references albums(id));
+ERROR:  syntax error at or near "referenses"
+LINE 1: ...varchar(35), length float(2),year date, genre int referenses...
+                                                             ^
+gaana=# CREATE TABLE songs ( id int PRIMARY KEY, name varchar(35), length float(2),year int, genre int referenses genres(id), singer int references singers(id), album int references albums(id));
+ERROR:  syntax error at or near "referenses"
+LINE 1: ... varchar(35), length float(2),year int, genre int referenses...
+                                                             ^
+gaana=# CREATE TABLE songs ( id int PRIMARY KEY, name varchar(35), length float(2),year int,  singer int references singers(id), album int references albums(id));
+CREATE TABLE
+gaana=# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ gaana     | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ test      | postgres | UTF8     | English_India.1252 | English_India.1252 |
+(5 rows)
+
+
+gaana=# \d
+              List of relations
+ Schema |     Name      |   Type   |  Owner
+--------+---------------+----------+----------
+ public | albums        | table    | postgres
+ public | awards        | table    | postgres
+ public | genres        | table    | postgres
+ public | genres_id_seq | sequence | postgres
+ public | producers     | table    | postgres
+ public | singers       | table    | postgres
+ public | songs         | table    | postgres
+(7 rows)
+
+
+gaana=#

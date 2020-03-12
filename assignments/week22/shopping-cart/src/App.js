@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Component,Fragment}from 'react';
+import StaticData from './components/StaticData';
+import Cart from './components/cart';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    items: [
+      { id: "1", name: "Orange", cost: 5},
+      { id: "2", name: "Orange", cost: 18},
+      { id: "3", name: "Orange", cost: 6}
+    ],
+    cart:[]
+  }
+  render() {
+    return (
+      <Fragment>
+        <div className="container-fluid bg-dark text-white text-center">
+          <h1 className="display-4">Cart Assignment</h1>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-6">
+              <StaticData items={this.state.items} />
+            </div>
+          </div>
+        </div>
+      </Fragment>
+    )
+  }
 }
 
 export default App;
