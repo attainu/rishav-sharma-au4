@@ -18,8 +18,8 @@ body{
     flex-wrap: wrap;
 }
 .child {
-    /* min-width: 500px;
-    height:150px */
+    min-width: 500px;
+    height:150px;
 }
 
 .child.one {
