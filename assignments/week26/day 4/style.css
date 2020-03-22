@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+.wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+}
+.child {
+    min-width: 500px;
+    height:150px;
+}
+
+.child.one {
+    font-size: 24px;
+    background-color: chartreuse;
+    text-decoration-color: silver;
+    flex-basis: 1536px;
+}
+.child.two {
+    font-size: 24px;
+    background-color: tan;
+
+}
+.child.three {
+    font-size: 24px;
+
+}
+.child.four {
+    background-color: chartreuse;
+    font-size: 24px;
+    flex-basis: 1536px;
+}
