@@ -1,0 +1,714 @@
+Server [localhost]:
+Database [postgres]:
+Port [5432]:
+Username [postgres]:
+Password for user postgres:
+psql (12.2)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# \l
+                                           List of databases
+      Name      |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+----------------+----------+----------+--------------------+--------------------+-----------------------
+ coworkingspace | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ gaana          | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ postgres       | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0      | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+                |          |          |                    |                    | postgres=CTc/postgres
+ template1      | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+                |          |          |                    |                    | postgres=CTc/postgres
+ test           | postgres | UTF8     | English_India.1252 | English_India.1252 |
+(6 rows)
+
+
+postgres=# \c test
+You are now connected to database "test" as user "postgres".
+test=# \i /c/Users/risha/Downloads
+/c/Users/risha/Downloads: No such file or directory
+test=# \i c:\Users\risha\Downloads\employeedata.sql
+c:: Permission denied
+test=# \i c:\Users\risha\Downloads\employeedata.sql;
+c:: Permission denied
+test=# \i C:\Users\risha\Downloads\employeedata.sql;
+C:: Permission denied
+test=# \i \c\Users\risha\Downloads\employeedata.sql;
+\i: missing required argument
+test=# \i C:\Users\risha\Downloads\employeedata.sql;
+C:: Permission denied
+test=# \i C:/Users/risha/Downloads/employeedata.sql;
+CREATE TABLE
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+psql:C:/Users/risha/Downloads/employeedata.sql:26: ERROR:  character with byte sequence 0x81 in encoding "WIN1252" has no equivalent in encoding "UTF8"
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+psql:C:/Users/risha/Downloads/employeedata.sql:42: ERROR:  character with byte sequence 0x81 in encoding "WIN1252" has no equivalent in encoding "UTF8"
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+psql:C:/Users/risha/Downloads/employeedata.sql:48: ERROR:  character with byte sequence 0x81 in encoding "WIN1252" has no equivalent in encoding "UTF8"
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+psql:C:/Users/risha/Downloads/employeedata.sql:58: ERROR:  character with byte sequence 0x81 in encoding "WIN1252" has no equivalent in encoding "UTF8"
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+psql:C:/Users/risha/Downloads/employeedata.sql:78: ERROR:  character with byte sequence 0x81 in encoding "WIN1252" has no equivalent in encoding "UTF8"
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+psql:C:/Users/risha/Downloads/employeedata.sql:104: ERROR:  character with byte sequence 0x81 in encoding "WIN1252" has no equivalent in encoding "UTF8"
+psql:C:/Users/risha/Downloads/employeedata.sql:105: ERROR:  character with byte sequence 0x81 in encoding "WIN1252" has no equivalent in encoding "UTF8"
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+test=# select * table employeedata
+test-# select * from employeedata
+test-# select * from employeedata;
+ERROR:  syntax error at or near "table"
+LINE 1: select * table employeedata
+                 ^
+test=# select * from employeedata;
+ id  |    employee_name     | employee_gender |   employee_department    | employee_salary |   companyoffice_city
+-----+----------------------+-----------------+--------------------------+-----------------+-------------------------
+   1 | Petr Nickless        | Male            | Business Development     | $9341.47        | Bukovany
+   2 | Natalee Stambridge   | Female          | Engineering              | $3020.42        | Motuo
+   3 | Ronnie Betjeman      | Male            | Legal                    | $8246.15        | Cabinteely
+   4 | Pepita Garwood       | Female          | Support                  | $6715.72        | Xishanzui
+   5 | Isis Mirams          | Female          | Support                  | $3654.05        | T├¡o Pujio
+   6 | Dorthy Worden        | Female          | Marketing                | $2105.92        | Logro├▒o
+   7 | Wyatan Siemianowicz  | Male            | Training                 | $8322.69        | Pereira Barreto
+   8 | Lynn Coates          | Female          | Marketing                | $2771.65        | Meishan
+   9 | Lanni Welford        | Female          | Support                  | $6674.46        | August├│w
+  10 | Christan Simonel     | Female          | Training                 | $5825.38        | Karpacz
+  11 | Hilliary Nowaczyk    | Female          | Human Resources          | $5216.53        | Sumqay─▒t
+  12 | Jasmina Barbey       | Female          | Support                  | $4172.07        | Rimouski
+  13 | Meridel De Winton    | Female          | Business Development     | $6397.37        | Estaca
+  14 | Harry Lanchbury      | Male            | Marketing                | $6473.26        | Raphoe
+  15 | Magdalen Stowers     | Female          | Legal                    | $4782.57        | Kyaka
+  16 | Arabela Aspole       | Female          | Product Management       | $7416.38        | El Kef
+  17 | Rutter Paladino      | Male            | Training                 | $9442.62        | Leramatang
+  19 | Carline Hercules     | Female          | Human Resources          | $8455.50        | Spas-Klepiki
+  20 | Rufus Lewinton       | Male            | Engineering              | $5632.78        | Fier-├çif├ºi
+  21 | Mandie O'Kane        | Female          | Training                 | $2098.78        | Cimongkor
+  22 | Oliver Bascombe      | Male            | Research and Development | $2542.01        | S├úo Sebasti├úo do Ca├¡
+  23 | Prudy Sebastian      | Female          | Services                 | $5591.12        | Al Man┼ƒ┼½rah
+  24 | Catlin Stoute        | Female          | Human Resources          | $8172.36        | Jinping
+  25 | Leland Mobley        | Female          | Support                  | $4565.60        | Tomioka
+  26 | Rodrique Flewitt     | Male            | Support                  | $7644.23        | Stockholm
+  27 | Ginger Heaton        | Male            | Legal                    | $3316.95        | G├╢teborg
+  28 | Benton Whitworth     | Male            | Marketing                | $6448.83        | Samadua
+  29 | Dorothee Matton      | Female          | Marketing                | $8776.18        | Krasnyy Profintern
+  30 | Berkeley Lunk        | Male            | Human Resources          | $8443.57        | Brisbane
+  31 | Reuben Slatcher      | Male            | Research and Development | $8360.69        | Velk├╜ ├Üjezd
+  32 | Barnie Queree        | Male            | Legal                    | $9067.78        | Arcueil
+  33 | Kermie Glowacki      | Male            | Training                 | $7957.69        | Bykov
+  35 | Hinze Jacson         | Male            | Services                 | $9993.71        | Birmingham
+  36 | Rhoda Phebey         | Female          | Engineering              | $7619.10        | Lianghekou
+  37 | Heinrik Clemmensen   | Male            | Services                 | $6830.26        | Santisimo Rosario
+  38 | Lonnie Drewry        | Male            | Support                  | $5108.97        | Angered
+  39 | Alleen Dakhov        | Female          | Product Management       | $7522.77        | Chahannao
+  41 | Tobi Dickenson       | Female          | Sales                    | $3778.86        | Pitogo
+  42 | Karisa Ropars        | Female          | Training                 | $8656.54        | Taoyuan
+  43 | Davide O'Meara       | Male            | Sales                    | $7125.99        | K├⌐tou
+  44 | Jilleen Wince        | Female          | Sales                    | $7597.51        | Fujioka
+  45 | Sunshine Blackall    | Female          | Support                  | $9251.89        | Dayr al Ghu┼ƒ┼½n
+  46 | Oralee Wixey         | Female          | Support                  | $4093.95        | Donan
+  47 | Katharina Fell       | Female          | Marketing                | $6237.80        | N├⌐a Karv├íli
+  48 | Andrus Jouning       | Male            | Engineering              | $6045.79        | Jiuxi
+  49 | Allayne Mountjoy     | Male            | Support                  | $7724.03        | Baon
+  51 | Dallas Suerz         | Male            | Training                 | $3523.03        | Krajan Satu
+  52 | Bryn Pleace          | Male            | Services                 | $2781.24        | Guanli
+  53 | Lenci Baulch         | Male            | Training                 | $7351.68        | Sarapul
+  54 | Olly Doley           | Female          | Marketing                | $7642.53        | Rumbek
+  55 | Alphard Borthe       | Male            | Accounting               | $5424.56        | Bru┼íperk
+  56 | Fernanda Ivashechkin | Female          | Services                 | $9471.33        | Jianrao
+  57 | Flemming Blaiklock   | Male            | Research and Development | $4803.93        | Samsan
+  58 | Starlene Gerlts      | Female          | Marketing                | $8954.98        | Granja
+  59 | Norene Jessel        | Female          | Legal                    | $5026.32        | Remedios
+  60 | Gael Leban           | Female          | Business Development     | $6152.11        | Krajan
+  61 | Wald Montrose        | Male            | Services                 | $2172.42        | Ash Shiß╕⌐r
+  62 | Chadd Rosenzwig      | Male            | Training                 | $5500.99        | Zhangping
+  63 | Land Janssen         | Male            | Product Management       | $2474.37        | Rancharia
+  64 | Morgan De Gregoli    | Female          | Support                  | $8500.03        | Zhoupi
+  65 | Phillip Kell         | Male            | Services                 | $3773.30        | Xinji
+  66 | Ddene Kirton         | Female          | Sales                    | $6325.65        | Sakule
+  67 | Carolina Valenti     | Female          | Accounting               | $7562.83        | Aykol
+  68 | Lazaro Hambric       | Male            | Sales                    | $3211.04        | Wang Nam Yen
+  69 | Lewes Auchterlony    | Male            | Accounting               | $7661.09        | Grzmi─àca
+  71 | Kipp Savin           | Female          | Human Resources          | $3141.04        | Monywa
+  72 | Launce Kerwen        | Male            | Business Development     | $4456.12        | Chaba┼Öovice
+  73 | Libbi Trenbey        | Female          | Sales                    | $4958.47        | Ruchihe
+  74 | Delmore Guerreau     | Male            | Training                 | $4510.10        | Nahariya
+  75 | Elora Semeniuk       | Female          | Marketing                | $7916.71        | Grujugan
+  76 | Maddi Vasilischev    | Female          | Business Development     | $5736.67        | Semuda
+  77 | Ricca MacSween       | Female          | Accounting               | $9861.82        | S├úo Sebasti├úo
+  78 | Carline Gobolos      | Female          | Marketing                | $9792.46        | Binangun
+  79 | Devora Lucian        | Female          | Sales                    | $8188.62        | Yubileynyy
+  80 | Cassandry Giannoni   | Female          | Accounting               | $3224.16        | Rucheng Chengguanzhen
+  81 | Wynn Eriksson        | Male            | Sales                    | $5400.19        | Leme
+  82 | Dalia Errol          | Female          | Sales                    | $4480.03        | Dorotea
+  83 | Francene Knowlson    | Female          | Marketing                | $7162.04        | Padamulya
+  84 | Melinde Hukin        | Female          | Services                 | $6617.09        | Balgatay
+  85 | Katrine Barensen     | Female          | Business Development     | $3976.91        | Maswa
+  86 | Dino Chew            | Male            | Research and Development | $3987.85        | Fifi
+  87 | Freemon Norkutt      | Male            | Sales                    | $6289.96        | Nankou
+  88 | Yoshi MacGhee        | Female          | Human Resources          | $2679.01        | Pitkyaranta
+  89 | Betteann Larkin      | Female          | Research and Development | $2013.62        | Kapunduk
+  90 | Ruthanne Erridge     | Female          | Accounting               | $8327.16        | Jalgung
+  91 | Minny Carmel         | Female          | Support                  | $6038.76        | Banjar Buahan
+  92 | Yul Brushneen        | Male            | Accounting               | $5080.69        | Creil
+  93 | Dione Bustard        | Female          | Sales                    | $9912.96        | El Olivar
+  94 | Melania Malan        | Female          | Human Resources          | $8835.81        | Jiaotan
+  95 | Naoma Blacksland     | Female          | Legal                    | $3887.82        | Orsha
+  98 | Lester Balogh        | Male            | Marketing                | $2136.45        | Beiwenquan
+  99 | Kerrie Dinnington    | Female          | Sales                    | $9196.84        | Querobamba
+ 100 | Alec McCarter        | Male            | Legal                    | $5378.28        | Charleville-M├⌐zi├¿res
+(93 rows)
+
+
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=# select * from employeedata order by department;
+ERROR:  column "department" does not exist
+LINE 1: select * from employeedata order by department;
+                                            ^
+test=# select * from employeedata order by employee_department;
+ id  |    employee_name     | employee_gender |   employee_department    | employee_salary |   companyoffice_city
+-----+----------------------+-----------------+--------------------------+-----------------+-------------------------
+  77 | Ricca MacSween       | Female          | Accounting               | $9861.82        | S├úo Sebasti├úo
+  55 | Alphard Borthe       | Male            | Accounting               | $5424.56        | Bru┼íperk
+  80 | Cassandry Giannoni   | Female          | Accounting               | $3224.16        | Rucheng Chengguanzhen
+  67 | Carolina Valenti     | Female          | Accounting               | $7562.83        | Aykol
+  69 | Lewes Auchterlony    | Male            | Accounting               | $7661.09        | Grzmi─àca
+  92 | Yul Brushneen        | Male            | Accounting               | $5080.69        | Creil
+  90 | Ruthanne Erridge     | Female          | Accounting               | $8327.16        | Jalgung
+  13 | Meridel De Winton    | Female          | Business Development     | $6397.37        | Estaca
+   1 | Petr Nickless        | Male            | Business Development     | $9341.47        | Bukovany
+  85 | Katrine Barensen     | Female          | Business Development     | $3976.91        | Maswa
+  76 | Maddi Vasilischev    | Female          | Business Development     | $5736.67        | Semuda
+  72 | Launce Kerwen        | Male            | Business Development     | $4456.12        | Chaba┼Öovice
+  60 | Gael Leban           | Female          | Business Development     | $6152.11        | Krajan
+  48 | Andrus Jouning       | Male            | Engineering              | $6045.79        | Jiuxi
+   2 | Natalee Stambridge   | Female          | Engineering              | $3020.42        | Motuo
+  20 | Rufus Lewinton       | Male            | Engineering              | $5632.78        | Fier-├çif├ºi
+  36 | Rhoda Phebey         | Female          | Engineering              | $7619.10        | Lianghekou
+  19 | Carline Hercules     | Female          | Human Resources          | $8455.50        | Spas-Klepiki
+  88 | Yoshi MacGhee        | Female          | Human Resources          | $2679.01        | Pitkyaranta
+  94 | Melania Malan        | Female          | Human Resources          | $8835.81        | Jiaotan
+  30 | Berkeley Lunk        | Male            | Human Resources          | $8443.57        | Brisbane
+  11 | Hilliary Nowaczyk    | Female          | Human Resources          | $5216.53        | Sumqay─▒t
+  24 | Catlin Stoute        | Female          | Human Resources          | $8172.36        | Jinping
+  71 | Kipp Savin           | Female          | Human Resources          | $3141.04        | Monywa
+ 100 | Alec McCarter        | Male            | Legal                    | $5378.28        | Charleville-M├⌐zi├¿res
+   3 | Ronnie Betjeman      | Male            | Legal                    | $8246.15        | Cabinteely
+  15 | Magdalen Stowers     | Female          | Legal                    | $4782.57        | Kyaka
+  27 | Ginger Heaton        | Male            | Legal                    | $3316.95        | G├╢teborg
+  32 | Barnie Queree        | Male            | Legal                    | $9067.78        | Arcueil
+  59 | Norene Jessel        | Female          | Legal                    | $5026.32        | Remedios
+  95 | Naoma Blacksland     | Female          | Legal                    | $3887.82        | Orsha
+   8 | Lynn Coates          | Female          | Marketing                | $2771.65        | Meishan
+  28 | Benton Whitworth     | Male            | Marketing                | $6448.83        | Samadua
+  83 | Francene Knowlson    | Female          | Marketing                | $7162.04        | Padamulya
+  54 | Olly Doley           | Female          | Marketing                | $7642.53        | Rumbek
+  47 | Katharina Fell       | Female          | Marketing                | $6237.80        | N├⌐a Karv├íli
+   6 | Dorthy Worden        | Female          | Marketing                | $2105.92        | Logro├▒o
+  78 | Carline Gobolos      | Female          | Marketing                | $9792.46        | Binangun
+  75 | Elora Semeniuk       | Female          | Marketing                | $7916.71        | Grujugan
+  14 | Harry Lanchbury      | Male            | Marketing                | $6473.26        | Raphoe
+  58 | Starlene Gerlts      | Female          | Marketing                | $8954.98        | Granja
+  98 | Lester Balogh        | Male            | Marketing                | $2136.45        | Beiwenquan
+  29 | Dorothee Matton      | Female          | Marketing                | $8776.18        | Krasnyy Profintern
+  16 | Arabela Aspole       | Female          | Product Management       | $7416.38        | El Kef
+  39 | Alleen Dakhov        | Female          | Product Management       | $7522.77        | Chahannao
+  63 | Land Janssen         | Male            | Product Management       | $2474.37        | Rancharia
+  22 | Oliver Bascombe      | Male            | Research and Development | $2542.01        | S├úo Sebasti├úo do Ca├¡
+  89 | Betteann Larkin      | Female          | Research and Development | $2013.62        | Kapunduk
+  86 | Dino Chew            | Male            | Research and Development | $3987.85        | Fifi
+  57 | Flemming Blaiklock   | Male            | Research and Development | $4803.93        | Samsan
+  31 | Reuben Slatcher      | Male            | Research and Development | $8360.69        | Velk├╜ ├Üjezd
+  44 | Jilleen Wince        | Female          | Sales                    | $7597.51        | Fujioka
+  66 | Ddene Kirton         | Female          | Sales                    | $6325.65        | Sakule
+  43 | Davide O'Meara       | Male            | Sales                    | $7125.99        | K├⌐tou
+  99 | Kerrie Dinnington    | Female          | Sales                    | $9196.84        | Querobamba
+  73 | Libbi Trenbey        | Female          | Sales                    | $4958.47        | Ruchihe
+  41 | Tobi Dickenson       | Female          | Sales                    | $3778.86        | Pitogo
+  79 | Devora Lucian        | Female          | Sales                    | $8188.62        | Yubileynyy
+  81 | Wynn Eriksson        | Male            | Sales                    | $5400.19        | Leme
+  82 | Dalia Errol          | Female          | Sales                    | $4480.03        | Dorotea
+  87 | Freemon Norkutt      | Male            | Sales                    | $6289.96        | Nankou
+  93 | Dione Bustard        | Female          | Sales                    | $9912.96        | El Olivar
+  68 | Lazaro Hambric       | Male            | Sales                    | $3211.04        | Wang Nam Yen
+  84 | Melinde Hukin        | Female          | Services                 | $6617.09        | Balgatay
+  35 | Hinze Jacson         | Male            | Services                 | $9993.71        | Birmingham
+  37 | Heinrik Clemmensen   | Male            | Services                 | $6830.26        | Santisimo Rosario
+  52 | Bryn Pleace          | Male            | Services                 | $2781.24        | Guanli
+  56 | Fernanda Ivashechkin | Female          | Services                 | $9471.33        | Jianrao
+  23 | Prudy Sebastian      | Female          | Services                 | $5591.12        | Al Man┼ƒ┼½rah
+  61 | Wald Montrose        | Male            | Services                 | $2172.42        | Ash Shiß╕⌐r
+  65 | Phillip Kell         | Male            | Services                 | $3773.30        | Xinji
+  12 | Jasmina Barbey       | Female          | Support                  | $4172.07        | Rimouski
+   9 | Lanni Welford        | Female          | Support                  | $6674.46        | August├│w
+  25 | Leland Mobley        | Female          | Support                  | $4565.60        | Tomioka
+  49 | Allayne Mountjoy     | Male            | Support                  | $7724.03        | Baon
+  91 | Minny Carmel         | Female          | Support                  | $6038.76        | Banjar Buahan
+  26 | Rodrique Flewitt     | Male            | Support                  | $7644.23        | Stockholm
+  46 | Oralee Wixey         | Female          | Support                  | $4093.95        | Donan
+   5 | Isis Mirams          | Female          | Support                  | $3654.05        | T├¡o Pujio
+   4 | Pepita Garwood       | Female          | Support                  | $6715.72        | Xishanzui
+  45 | Sunshine Blackall    | Female          | Support                  | $9251.89        | Dayr al Ghu┼ƒ┼½n
+  38 | Lonnie Drewry        | Male            | Support                  | $5108.97        | Angered
+  64 | Morgan De Gregoli    | Female          | Support                  | $8500.03        | Zhoupi
+  74 | Delmore Guerreau     | Male            | Training                 | $4510.10        | Nahariya
+  17 | Rutter Paladino      | Male            | Training                 | $9442.62        | Leramatang
+  10 | Christan Simonel     | Female          | Training                 | $5825.38        | Karpacz
+  21 | Mandie O'Kane        | Female          | Training                 | $2098.78        | Cimongkor
+  51 | Dallas Suerz         | Male            | Training                 | $3523.03        | Krajan Satu
+  62 | Chadd Rosenzwig      | Male            | Training                 | $5500.99        | Zhangping
+  33 | Kermie Glowacki      | Male            | Training                 | $7957.69        | Bykov
+  42 | Karisa Ropars        | Female          | Training                 | $8656.54        | Taoyuan
+   7 | Wyatan Siemianowicz  | Male            | Training                 | $8322.69        | Pereira Barreto
+  53 | Lenci Baulch         | Male            | Training                 | $7351.68        | Sarapul
+(93 rows)
+
+
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=#
+test=# select COUNT(employee_name),employee_department from employeedata order by employee_department;
+ERROR:  column "employeedata.employee_department" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: select COUNT(employee_name),employee_department from employe...
+                                    ^
+test=# select COUNT(employee_name) from employeedata order by employee_department;
+ERROR:  column "employeedata.employee_department" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...t COUNT(employee_name) from employeedata order by employee_d...
+                                                             ^
+test=# select COUNT(employee_name) from employeedata order by employee_department;
+ERROR:  column "employeedata.employee_department" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: ...t COUNT(employee_name) from employeedata order by employee_d...
+                                                             ^
+test=# select COUNT(employee_name) from employeedata;
+ count
+-------
+    93
+(1 row)
+
+
+test=# select * from employeedata order by employee_department;
+ id  |    employee_name     | employee_gender |   employee_department    | employee_salary |   companyoffice_city
+-----+----------------------+-----------------+--------------------------+-----------------+-------------------------
+  77 | Ricca MacSween       | Female          | Accounting               | $9861.82        | S├úo Sebasti├úo
+  55 | Alphard Borthe       | Male            | Accounting               | $5424.56        | Bru┼íperk
+  80 | Cassandry Giannoni   | Female          | Accounting               | $3224.16        | Rucheng Chengguanzhen
+  67 | Carolina Valenti     | Female          | Accounting               | $7562.83        | Aykol
+  69 | Lewes Auchterlony    | Male            | Accounting               | $7661.09        | Grzmi─àca
+  92 | Yul Brushneen        | Male            | Accounting               | $5080.69        | Creil
+  90 | Ruthanne Erridge     | Female          | Accounting               | $8327.16        | Jalgung
+  13 | Meridel De Winton    | Female          | Business Development     | $6397.37        | Estaca
+   1 | Petr Nickless        | Male            | Business Development     | $9341.47        | Bukovany
+  85 | Katrine Barensen     | Female          | Business Development     | $3976.91        | Maswa
+  76 | Maddi Vasilischev    | Female          | Business Development     | $5736.67        | Semuda
+  72 | Launce Kerwen        | Male            | Business Development     | $4456.12        | Chaba┼Öovice
+  60 | Gael Leban           | Female          | Business Development     | $6152.11        | Krajan
+  48 | Andrus Jouning       | Male            | Engineering              | $6045.79        | Jiuxi
+   2 | Natalee Stambridge   | Female          | Engineering              | $3020.42        | Motuo
+  20 | Rufus Lewinton       | Male            | Engineering              | $5632.78        | Fier-├çif├ºi
+  36 | Rhoda Phebey         | Female          | Engineering              | $7619.10        | Lianghekou
+  19 | Carline Hercules     | Female          | Human Resources          | $8455.50        | Spas-Klepiki
+  88 | Yoshi MacGhee        | Female          | Human Resources          | $2679.01        | Pitkyaranta
+  94 | Melania Malan        | Female          | Human Resources          | $8835.81        | Jiaotan
+  30 | Berkeley Lunk        | Male            | Human Resources          | $8443.57        | Brisbane
+  11 | Hilliary Nowaczyk    | Female          | Human Resources          | $5216.53        | Sumqay─▒t
+  24 | Catlin Stoute        | Female          | Human Resources          | $8172.36        | Jinping
+  71 | Kipp Savin           | Female          | Human Resources          | $3141.04        | Monywa
+ 100 | Alec McCarter        | Male            | Legal                    | $5378.28        | Charleville-M├⌐zi├¿res
+   3 | Ronnie Betjeman      | Male            | Legal                    | $8246.15        | Cabinteely
+  15 | Magdalen Stowers     | Female          | Legal                    | $4782.57        | Kyaka
+  27 | Ginger Heaton        | Male            | Legal                    | $3316.95        | G├╢teborg
+  32 | Barnie Queree        | Male            | Legal                    | $9067.78        | Arcueil
+  59 | Norene Jessel        | Female          | Legal                    | $5026.32        | Remedios
+  95 | Naoma Blacksland     | Female          | Legal                    | $3887.82        | Orsha
+   8 | Lynn Coates          | Female          | Marketing                | $2771.65        | Meishan
+  28 | Benton Whitworth     | Male            | Marketing                | $6448.83        | Samadua
+  83 | Francene Knowlson    | Female          | Marketing                | $7162.04        | Padamulya
+  54 | Olly Doley           | Female          | Marketing                | $7642.53        | Rumbek
+  47 | Katharina Fell       | Female          | Marketing                | $6237.80        | N├⌐a Karv├íli
+   6 | Dorthy Worden        | Female          | Marketing                | $2105.92        | Logro├▒o
+  78 | Carline Gobolos      | Female          | Marketing                | $9792.46        | Binangun
+  75 | Elora Semeniuk       | Female          | Marketing                | $7916.71        | Grujugan
+  14 | Harry Lanchbury      | Male            | Marketing                | $6473.26        | Raphoe
+  58 | Starlene Gerlts      | Female          | Marketing                | $8954.98        | Granja
+  98 | Lester Balogh        | Male            | Marketing                | $2136.45        | Beiwenquan
+  29 | Dorothee Matton      | Female          | Marketing                | $8776.18        | Krasnyy Profintern
+  16 | Arabela Aspole       | Female          | Product Management       | $7416.38        | El Kef
+  39 | Alleen Dakhov        | Female          | Product Management       | $7522.77        | Chahannao
+  63 | Land Janssen         | Male            | Product Management       | $2474.37        | Rancharia
+  22 | Oliver Bascombe      | Male            | Research and Development | $2542.01        | S├úo Sebasti├úo do Ca├¡
+  89 | Betteann Larkin      | Female          | Research and Development | $2013.62        | Kapunduk
+  86 | Dino Chew            | Male            | Research and Development | $3987.85        | Fifi
+  57 | Flemming Blaiklock   | Male            | Research and Development | $4803.93        | Samsan
+  31 | Reuben Slatcher      | Male            | Research and Development | $8360.69        | Velk├╜ ├Üjezd
+  44 | Jilleen Wince        | Female          | Sales                    | $7597.51        | Fujioka
+  66 | Ddene Kirton         | Female          | Sales                    | $6325.65        | Sakule
+  43 | Davide O'Meara       | Male            | Sales                    | $7125.99        | K├⌐tou
+  99 | Kerrie Dinnington    | Female          | Sales                    | $9196.84        | Querobamba
+  73 | Libbi Trenbey        | Female          | Sales                    | $4958.47        | Ruchihe
+  41 | Tobi Dickenson       | Female          | Sales                    | $3778.86        | Pitogo
+  79 | Devora Lucian        | Female          | Sales                    | $8188.62        | Yubileynyy
+  81 | Wynn Eriksson        | Male            | Sales                    | $5400.19        | Leme
+  82 | Dalia Errol          | Female          | Sales                    | $4480.03        | Dorotea
+  87 | Freemon Norkutt      | Male            | Sales                    | $6289.96        | Nankou
+  93 | Dione Bustard        | Female          | Sales                    | $9912.96        | El Olivar
+  68 | Lazaro Hambric       | Male            | Sales                    | $3211.04        | Wang Nam Yen
+  84 | Melinde Hukin        | Female          | Services                 | $6617.09        | Balgatay
+  35 | Hinze Jacson         | Male            | Services                 | $9993.71        | Birmingham
+  37 | Heinrik Clemmensen   | Male            | Services                 | $6830.26        | Santisimo Rosario
+  52 | Bryn Pleace          | Male            | Services                 | $2781.24        | Guanli
+  56 | Fernanda Ivashechkin | Female          | Services                 | $9471.33        | Jianrao
+  23 | Prudy Sebastian      | Female          | Services                 | $5591.12        | Al Man┼ƒ┼½rah
+  61 | Wald Montrose        | Male            | Services                 | $2172.42        | Ash Shiß╕⌐r
+  65 | Phillip Kell         | Male            | Services                 | $3773.30        | Xinji
+  12 | Jasmina Barbey       | Female          | Support                  | $4172.07        | Rimouski
+   9 | Lanni Welford        | Female          | Support                  | $6674.46        | August├│w
+  25 | Leland Mobley        | Female          | Support                  | $4565.60        | Tomioka
+  49 | Allayne Mountjoy     | Male            | Support                  | $7724.03        | Baon
+  91 | Minny Carmel         | Female          | Support                  | $6038.76        | Banjar Buahan
+  26 | Rodrique Flewitt     | Male            | Support                  | $7644.23        | Stockholm
+  46 | Oralee Wixey         | Female          | Support                  | $4093.95        | Donan
+   5 | Isis Mirams          | Female          | Support                  | $3654.05        | T├¡o Pujio
+   4 | Pepita Garwood       | Female          | Support                  | $6715.72        | Xishanzui
+  45 | Sunshine Blackall    | Female          | Support                  | $9251.89        | Dayr al Ghu┼ƒ┼½n
+  38 | Lonnie Drewry        | Male            | Support                  | $5108.97        | Angered
+  64 | Morgan De Gregoli    | Female          | Support                  | $8500.03        | Zhoupi
+  74 | Delmore Guerreau     | Male            | Training                 | $4510.10        | Nahariya
+  17 | Rutter Paladino      | Male            | Training                 | $9442.62        | Leramatang
+  10 | Christan Simonel     | Female          | Training                 | $5825.38        | Karpacz
+  21 | Mandie O'Kane        | Female          | Training                 | $2098.78        | Cimongkor
+  51 | Dallas Suerz         | Male            | Training                 | $3523.03        | Krajan Satu
+  62 | Chadd Rosenzwig      | Male            | Training                 | $5500.99        | Zhangping
+  33 | Kermie Glowacki      | Male            | Training                 | $7957.69        | Bykov
+  42 | Karisa Ropars        | Female          | Training                 | $8656.54        | Taoyuan
+   7 | Wyatan Siemianowicz  | Male            | Training                 | $8322.69        | Pereira Barreto
+  53 | Lenci Baulch         | Male            | Training                 | $7351.68        | Sarapul
+(93 rows)
+
+
+test=#
+test=#
+test=#
+test=# select COUNT(employee_name) from employeedata group by employee_department;
+ count
+-------
+    12
+    10
+    12
+     5
+     3
+     6
+    12
+     7
+     7
+     8
+     7
+     4
+(12 rows)
+
+
+test=# select COUNT(employee_name),employee_department from employeedata group by employee_department;
+ count |   employee_department
+-------+--------------------------
+    12 | Marketing
+    10 | Training
+    12 | Sales
+     5 | Research and Development
+     3 | Product Management
+     6 | Business Development
+    12 | Support
+     7 | Legal
+     7 | Accounting
+     8 | Services
+     7 | Human Resources
+     4 | Engineering
+(12 rows)
+
+
+test=# select * from employeedata order by employee_department,employee_gender;
+ id  |    employee_name     | employee_gender |   employee_department    | employee_salary |   companyoffice_city
+-----+----------------------+-----------------+--------------------------+-----------------+-------------------------
+  90 | Ruthanne Erridge     | Female          | Accounting               | $8327.16        | Jalgung
+  67 | Carolina Valenti     | Female          | Accounting               | $7562.83        | Aykol
+  77 | Ricca MacSween       | Female          | Accounting               | $9861.82        | S├úo Sebasti├úo
+  80 | Cassandry Giannoni   | Female          | Accounting               | $3224.16        | Rucheng Chengguanzhen
+  55 | Alphard Borthe       | Male            | Accounting               | $5424.56        | Bru┼íperk
+  92 | Yul Brushneen        | Male            | Accounting               | $5080.69        | Creil
+  69 | Lewes Auchterlony    | Male            | Accounting               | $7661.09        | Grzmi─àca
+  60 | Gael Leban           | Female          | Business Development     | $6152.11        | Krajan
+  85 | Katrine Barensen     | Female          | Business Development     | $3976.91        | Maswa
+  13 | Meridel De Winton    | Female          | Business Development     | $6397.37        | Estaca
+  76 | Maddi Vasilischev    | Female          | Business Development     | $5736.67        | Semuda
+   1 | Petr Nickless        | Male            | Business Development     | $9341.47        | Bukovany
+  72 | Launce Kerwen        | Male            | Business Development     | $4456.12        | Chaba┼Öovice
+  36 | Rhoda Phebey         | Female          | Engineering              | $7619.10        | Lianghekou
+   2 | Natalee Stambridge   | Female          | Engineering              | $3020.42        | Motuo
+  20 | Rufus Lewinton       | Male            | Engineering              | $5632.78        | Fier-├çif├ºi
+  48 | Andrus Jouning       | Male            | Engineering              | $6045.79        | Jiuxi
+  19 | Carline Hercules     | Female          | Human Resources          | $8455.50        | Spas-Klepiki
+  88 | Yoshi MacGhee        | Female          | Human Resources          | $2679.01        | Pitkyaranta
+  11 | Hilliary Nowaczyk    | Female          | Human Resources          | $5216.53        | Sumqay─▒t
+  71 | Kipp Savin           | Female          | Human Resources          | $3141.04        | Monywa
+  24 | Catlin Stoute        | Female          | Human Resources          | $8172.36        | Jinping
+  94 | Melania Malan        | Female          | Human Resources          | $8835.81        | Jiaotan
+  30 | Berkeley Lunk        | Male            | Human Resources          | $8443.57        | Brisbane
+  95 | Naoma Blacksland     | Female          | Legal                    | $3887.82        | Orsha
+  59 | Norene Jessel        | Female          | Legal                    | $5026.32        | Remedios
+  15 | Magdalen Stowers     | Female          | Legal                    | $4782.57        | Kyaka
+ 100 | Alec McCarter        | Male            | Legal                    | $5378.28        | Charleville-M├⌐zi├¿res
+   3 | Ronnie Betjeman      | Male            | Legal                    | $8246.15        | Cabinteely
+  27 | Ginger Heaton        | Male            | Legal                    | $3316.95        | G├╢teborg
+  32 | Barnie Queree        | Male            | Legal                    | $9067.78        | Arcueil
+   6 | Dorthy Worden        | Female          | Marketing                | $2105.92        | Logro├▒o
+  29 | Dorothee Matton      | Female          | Marketing                | $8776.18        | Krasnyy Profintern
+  54 | Olly Doley           | Female          | Marketing                | $7642.53        | Rumbek
+   8 | Lynn Coates          | Female          | Marketing                | $2771.65        | Meishan
+  47 | Katharina Fell       | Female          | Marketing                | $6237.80        | N├⌐a Karv├íli
+  78 | Carline Gobolos      | Female          | Marketing                | $9792.46        | Binangun
+  75 | Elora Semeniuk       | Female          | Marketing                | $7916.71        | Grujugan
+  83 | Francene Knowlson    | Female          | Marketing                | $7162.04        | Padamulya
+  58 | Starlene Gerlts      | Female          | Marketing                | $8954.98        | Granja
+  14 | Harry Lanchbury      | Male            | Marketing                | $6473.26        | Raphoe
+  98 | Lester Balogh        | Male            | Marketing                | $2136.45        | Beiwenquan
+  28 | Benton Whitworth     | Male            | Marketing                | $6448.83        | Samadua
+  16 | Arabela Aspole       | Female          | Product Management       | $7416.38        | El Kef
+  39 | Alleen Dakhov        | Female          | Product Management       | $7522.77        | Chahannao
+  63 | Land Janssen         | Male            | Product Management       | $2474.37        | Rancharia
+  89 | Betteann Larkin      | Female          | Research and Development | $2013.62        | Kapunduk
+  31 | Reuben Slatcher      | Male            | Research and Development | $8360.69        | Velk├╜ ├Üjezd
+  57 | Flemming Blaiklock   | Male            | Research and Development | $4803.93        | Samsan
+  22 | Oliver Bascombe      | Male            | Research and Development | $2542.01        | S├úo Sebasti├úo do Ca├¡
+  86 | Dino Chew            | Male            | Research and Development | $3987.85        | Fifi
+  99 | Kerrie Dinnington    | Female          | Sales                    | $9196.84        | Querobamba
+  66 | Ddene Kirton         | Female          | Sales                    | $6325.65        | Sakule
+  41 | Tobi Dickenson       | Female          | Sales                    | $3778.86        | Pitogo
+  44 | Jilleen Wince        | Female          | Sales                    | $7597.51        | Fujioka
+  73 | Libbi Trenbey        | Female          | Sales                    | $4958.47        | Ruchihe
+  79 | Devora Lucian        | Female          | Sales                    | $8188.62        | Yubileynyy
+  82 | Dalia Errol          | Female          | Sales                    | $4480.03        | Dorotea
+  93 | Dione Bustard        | Female          | Sales                    | $9912.96        | El Olivar
+  43 | Davide O'Meara       | Male            | Sales                    | $7125.99        | K├⌐tou
+  87 | Freemon Norkutt      | Male            | Sales                    | $6289.96        | Nankou
+  68 | Lazaro Hambric       | Male            | Sales                    | $3211.04        | Wang Nam Yen
+  81 | Wynn Eriksson        | Male            | Sales                    | $5400.19        | Leme
+  84 | Melinde Hukin        | Female          | Services                 | $6617.09        | Balgatay
+  56 | Fernanda Ivashechkin | Female          | Services                 | $9471.33        | Jianrao
+  23 | Prudy Sebastian      | Female          | Services                 | $5591.12        | Al Man┼ƒ┼½rah
+  35 | Hinze Jacson         | Male            | Services                 | $9993.71        | Birmingham
+  65 | Phillip Kell         | Male            | Services                 | $3773.30        | Xinji
+  37 | Heinrik Clemmensen   | Male            | Services                 | $6830.26        | Santisimo Rosario
+  61 | Wald Montrose        | Male            | Services                 | $2172.42        | Ash Shiß╕⌐r
+  52 | Bryn Pleace          | Male            | Services                 | $2781.24        | Guanli
+   4 | Pepita Garwood       | Female          | Support                  | $6715.72        | Xishanzui
+  45 | Sunshine Blackall    | Female          | Support                  | $9251.89        | Dayr al Ghu┼ƒ┼½n
+  46 | Oralee Wixey         | Female          | Support                  | $4093.95        | Donan
+  25 | Leland Mobley        | Female          | Support                  | $4565.60        | Tomioka
+  64 | Morgan De Gregoli    | Female          | Support                  | $8500.03        | Zhoupi
+  12 | Jasmina Barbey       | Female          | Support                  | $4172.07        | Rimouski
+   9 | Lanni Welford        | Female          | Support                  | $6674.46        | August├│w
+  91 | Minny Carmel         | Female          | Support                  | $6038.76        | Banjar Buahan
+   5 | Isis Mirams          | Female          | Support                  | $3654.05        | T├¡o Pujio
+  26 | Rodrique Flewitt     | Male            | Support                  | $7644.23        | Stockholm
+  38 | Lonnie Drewry        | Male            | Support                  | $5108.97        | Angered
+  49 | Allayne Mountjoy     | Male            | Support                  | $7724.03        | Baon
+  21 | Mandie O'Kane        | Female          | Training                 | $2098.78        | Cimongkor
+  42 | Karisa Ropars        | Female          | Training                 | $8656.54        | Taoyuan
+  10 | Christan Simonel     | Female          | Training                 | $5825.38        | Karpacz
+   7 | Wyatan Siemianowicz  | Male            | Training                 | $8322.69        | Pereira Barreto
+  51 | Dallas Suerz         | Male            | Training                 | $3523.03        | Krajan Satu
+  62 | Chadd Rosenzwig      | Male            | Training                 | $5500.99        | Zhangping
+  33 | Kermie Glowacki      | Male            | Training                 | $7957.69        | Bykov
+  74 | Delmore Guerreau     | Male            | Training                 | $4510.10        | Nahariya
+  17 | Rutter Paladino      | Male            | Training                 | $9442.62        | Leramatang
+  53 | Lenci Baulch         | Male            | Training                 | $7351.68        | Sarapul
+(93 rows)
+
+
+test=#
+test=#
+test=#
+test=#
+test=#
+test=# select COUNT(Male),employee_department from employeedata group by employee_department;
+ERROR:  column "male" does not exist
+LINE 1: select COUNT(Male),employee_department from employeedata gro...
+                     ^
+test=# select COUNT(Male),employee_department from employeedata group by employee_department,employee_gender;
+ERROR:  column "male" does not exist
+LINE 1: select COUNT(Male),employee_department from employeedata gro...
+                     ^
+test=# select COUNT(Male),employee_department from employeedata group by employee_gender;
+ERROR:  column "male" does not exist
+LINE 1: select COUNT(Male),employee_department from employeedata gro...
+                     ^
+test=# select COUNT(employee_gender,Male),employee_department from employeedata group by employee_gender;
+ERROR:  column "male" does not exist
+LINE 1: select COUNT(employee_gender,Male),employee_department from ...
+                                     ^
+test=# select COUNT(employee_gender),employee_department from employeedata group by employee_gender;
+ERROR:  column "employeedata.employee_department" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: select COUNT(employee_gender),employee_department from emplo...
+                                      ^
+test=# select COUNT(employee_gender),employee_department from employeedata group by employee_department;
+ count |   employee_department
+-------+--------------------------
+    12 | Marketing
+    10 | Training
+    12 | Sales
+     5 | Research and Development
+     3 | Product Management
+     6 | Business Development
+    12 | Support
+     7 | Legal
+     7 | Accounting
+     8 | Services
+     7 | Human Resources
+     4 | Engineering
+(12 rows)
+
+
+test=# select COUNT(employee_gender),employee_gender from employeedata group by employee_department;
+ERROR:  column "employeedata.employee_gender" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: select COUNT(employee_gender),employee_gender from employeed...
+                                      ^
+test=# select COUNT(employee_gender),employee_gender from employeedata group by employee_department;
+ERROR:  column "employeedata.employee_gender" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: select COUNT(employee_gender),employee_gender from employeed...
+                                      ^
+test=# select COUNT(employee_salary),employee_department from employeedata group by employee_department;
+ count |   employee_department
+-------+--------------------------
+    12 | Marketing
+    10 | Training
+    12 | Sales
+     5 | Research and Development
+     3 | Product Management
+     6 | Business Development
+    12 | Support
+     7 | Legal
+     7 | Accounting
+     8 | Services
+     7 | Human Resources
+     4 | Engineering
+(12 rows)
+
+
+test=#
