@@ -1,0 +1,61 @@
+postgres=# \c test
+You are now connected to database "test" as user "postgres".
+test=# CREATE TABLE studets (id serial PRIMARY KEY NOT NULL, name text NOT NULL, age int NOT NULL, parent_phone int,roll_number int NOT NULL DEFAULT 0, DOB date NOT NULL DEFAULT '01-01-2000');
+CREATE TABLE
+test=# SELECT* FROM students;
+ERROR:  relation "students" does not exist
+LINE 1: SELECT* FROM students;
+                     ^
+test=# SELECT* FROM studets;
+ id | name | age | parent_phone | roll_number | dob
+----+------+-----+--------------+-------------+-----
+(0 rows)
+
+
+test=# INSERT INTO studets VALUES(default,'rishav',24,917979797979,default,default);
+ERROR:  integer out of range
+test=# INSERT INTO studets VALUES(default,'rishav',24,917979799,default,default);
+INSERT 0 1
+test=# SELECT* FROM studets;
+ id |  name  | age | parent_phone | roll_number |    dob
+----+--------+-----+--------------+-------------+------------
+  1 | rishav |  24 |    917979799 |           0 | 2000-01-01
+(1 row)
+
+
+test=# CREATE TABLE parent (name text PRIMARY KEY);
+CREATE TABLE
+test=# SELECT* FROM parent;
+ name
+------
+(0 rows)
+
+
+test=# alter table  studets add column parent_name text REFERENCES parent(name);
+ALTER TABLE
+test=# SELECT* FROM parent;
+ name
+------
+(0 rows)
+
+
+test=# SELECT* FROM studets;
+ id |  name  | age | parent_phone | roll_number |    dob     | parent_name
+----+--------+-----+--------------+-------------+------------+-------------
+  1 | rishav |  24 |    917979799 |           0 | 2000-01-01 |
+(1 row)
+
+
+test=# alter table  studets add column student_class text REFERENCES class(student_name);
+ERROR:  relation "class" does not exist
+test=# alter table  studets add column student_class text REFERENCES class(class_name);
+ERROR:  relation "class" does not exist
+test=# CREATE TABLE class (class_name text PRIMARY KEY);
+CREATE TABLE
+test=# alter table  studets add column student_class text REFERENCES class(class_name);
+ALTER TABLE
+test=# SELECT* FROM studets;
+ id |  name  | age | parent_phone | roll_number |    dob     | parent_name | student_class
+----+--------+-----+--------------+-------------+------------+-------------+---------------
+  1 | rishav |  24 |    917979799 |           0 | 2000-01-01 |             |
+(1 row)
