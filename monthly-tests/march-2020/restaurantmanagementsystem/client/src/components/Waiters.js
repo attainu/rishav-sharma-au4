@@ -43,6 +43,7 @@ class Waiters extends Component {
                         </div>
                     </div>
                 ))}
+                <a type="button" class="btn btn-primary btn-lg btn-block" href="/orders">Next</a>
             </div>
             </div>
         );

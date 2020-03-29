@@ -65,6 +65,114 @@ app . get ( "/waiters" , async ( req , res ) => {
     console . log ( error );
     }
     });
+    app . put ( "/waiters/:id" , async ( req , res ) => {
+        try {
+        const { body , params } = req ;
+        
+        let waiters = await Waiters . update ({ waitername: body . waitername , waiterage: body . waiterage, waitermobile: body . waitermobile , waiterage: body . waiterage, waiterratings: body . waiterratings,waiterexperience: body . waiterexperience}, {
+        where: { id: params . id } });
+        res . send ( waiters );
+        } catch ( error ) {
+        console . log ( error );
+        }
+        });
+        app . delete ( "/waiters/:id" , async ( req , res ) => {
+            try {
+            const { params } = req ;
+            await Waiters . destroy ({ where: { id: params . id } });
+            res . send ( "Deleted successfully" );
+            } catch ( error ) {
+            console . log ( error );
+            }
+            })
+
+            //orders
+            //create
+            app . post ( "/order" , async ( req , res ) => {
+                try {
+                const { body } = req ;
+                let order = await Order . create ({ name: body . name,mobile: body . mobile });
+                res . send ( order );
+                } catch ( error ) {
+                console . log ( error );
+                }
+                });
+                //get
+                app . get ( "/order" , async ( req , res ) => {
+                    try {
+                    
+                    let order = await Order . findAll ();
+                    res . send ( order );
+                    } catch ( error ) {
+                    console . log ( error );
+                    }
+                    });
+                //update
+                app . put ( "/order/:id" , async ( req , res ) => {
+                    try {
+                    const { body , params } = req ;
+                    
+                    let order = await Order . update ({ name: body . name,mobile: body . mobile}, {
+                    where: { id: params . id } });
+                    res . send ( order );
+                    } catch ( error ) {
+                    console . log ( error );
+                    }
+                    });
+                    //delete
+                app . delete ( "/order/:id" , async ( req , res ) => {
+                    try {
+                    const { params } = req ;
+                    await Order . destroy ({ where: { id: params . id } });
+                    res . send ( "Deleted successfully" );
+                    } catch ( error ) {
+                    console . log ( error );
+                    }
+                    })
+                    //menu
+            //create
+            app . post ( "/menu" , async ( req , res ) => {
+                try {
+                const { body } = req ;
+                let menu = await Menu . create ({ name: body . name,mobile: body . mobile });
+                res . send ( menu );
+                } catch ( error ) {
+                console . log ( error );
+                }
+                });
+                //get
+                app . get ( "/menu" , async ( req , res ) => {
+                    try {
+                    
+                    let menu = await Menu . findAll ();
+                    res . send ( menu );
+                    } catch ( error ) {
+                    console . log ( error );
+                    }
+                    });
+                //update
+                app . put ( "/menu/:id" , async ( req , res ) => {
+                    try {
+                    const { body , params } = req ;
+                    
+                    let menu = await Menu . update ({ name: body . name,mobile: body . mobile}, {
+                    where: { id: params . id } });
+                    res . send ( Menu );
+                    } catch ( error ) {
+                    console . log ( error );
+                    }
+                    });
+                    //delete
+                app . delete ( "/menu/:id" , async ( req , res ) => {
+                    try {
+                    const { params } = req ;
+                    await menu . destroy ({ where: { id: params . id } });
+                    res . send ( "Deleted successfully" );
+                    } catch ( error ) {
+                    console . log ( error );
+                    }
+                    })
+
 
 
 module . exports = app ;
