@@ -7,16 +7,16 @@ import Waiters from './components/Waiters';
 
 function App() {
   return (
-    <Router>
+  <Router>
     <Switch>
-        <Route exact path="/">
+      <Route exact path="/">
         <Redirect to="/table" />
-        </Route>
-        <Route path="/table" component={Table} />
-        <Route paths="/waiters" component={Waiters}/>
-        <Route path="/orders" component={Orders}/>
-        </Switch>
-        </Router>
+      </Route>
+      <Route path="/table" component={Table} /> 
+      <Route path="/orders" component={Orders}/>
+      <Route paths="/waiters" component={Waiters}/>
+    </Switch>
+  </Router>
         
       
   );

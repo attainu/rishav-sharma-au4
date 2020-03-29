@@ -88,6 +88,7 @@ app . get ( "/waiters" , async ( req , res ) => {
 
             //orders
             //create
+            const Order = require ( "./Models/Order" );
             app . post ( "/order" , async ( req , res ) => {
                 try {
                 const { body } = req ;
@@ -131,6 +132,7 @@ app . get ( "/waiters" , async ( req , res ) => {
                     })
                     //menu
             //create
+            const Menu = require ( "./Models/Menu" );
             app . post ( "/menu" , async ( req , res ) => {
                 try {
                 const { body } = req ;
