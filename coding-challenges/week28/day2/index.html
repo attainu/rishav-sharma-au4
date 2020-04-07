@@ -13,8 +13,14 @@
 
 </body>
 <script>
-    function showHelp(help) {
+function showHelp(help) {
   document.getElementById('help').innerHTML = help;
+}
+
+function makeHelpCallback(help) {
+  return function() {
+    showHelp(help);
+  };
 }
 
 function setupHelp() {
@@ -26,9 +32,7 @@ function setupHelp() {
 
   for (var i = 0; i < helpText.length; i++) {
     var item = helpText[i];
-    document.getElementById(item.id).onfocus = function() {
-      showHelp(item.help);
-    }
+    document.getElementById(item.id).onfocus = makeHelpCallback(item.help);
   }
 }
 
