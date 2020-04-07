@@ -1,35 +1,89 @@
-// const express = require("express");
-// const app = express();
-// const db = require("./database");
+const express = require("express");
+const app = express();
 
-// app.use(express.json());
+app.use(express.json());
 
-// app.post("/waiter", async (req, res) => {
-//     try{
-//         const { body } = req;
-//        await db.query("CREATE TABLE if not exists waiters (id integer primary key, name varchar(30),email varchar(100), mobile int)");
-//     }
-//     catch (error){
+const Employee = require("./Models/Employee");
+const Department = require("./Models/Department");
 
-//     console.log(error);
-//     }
-// })
+//for Employee
+app.post("/employee", async (req, res) => {
+  try {
+    const { body } = req;
+    let employee = await Employee.create({ employeeName: body.employeeName });
+    res.send(employee);
+  } catch (error) {
+    console.log(error);
+  }
+ });
+ 
+ app.get("/employee", async (req, res) => {
+  try {
+    let employees = await Employee.findAll();
+    res.send(employees);
+  } catch (error) {
+    console.log(error);
+  }
+ });
+ 
+ app.put("/employee/:id", async (req, res) => {
+  try {
+    const { body, params } = req;
+    let employee = await Employee.update({ employeeName: body.employeeName }, { where: { id: params.id } });
+    res.send(employee);
+  } catch (error) {
+    console.log(error);
+  }
+ });
+ 
+ app.delete("/employee/:id", async (req, res) => {
+  try {
+    const { params } = req;
+    await Employee.destroy({ where: { id: params.id } });
+    res.send("Deleted successfully");
+  } catch (error) {
+    console.log(error);
+  }
+ })
 
-// module.exports = app;
+//for Department
+app.post("/department", async (req, res) => {
+  try {
+    const { body } = req;
+    let department = await Department.create({ departmentName: body.departmentName });
+    res.send(department);
+  } catch (error) {
+    console.log(error);
+  }
+ });
+ 
+ app.get("/department", async (req, res) => {
+  try {
+    let departments = await Department.findAll();
+    res.send(departments);
+  } catch (error) {
+    console.log(error);
+  }
+ });
+ 
+ app.put("/department/:id", async (req, res) => {
+  try {
+    const { body, params } = req;
+    let department = await Department.update({ departmentName: body.departmentName }, { where: { id: params.id } });
+    res.send(department);
+  } catch (error) {
+    console.log(error);
+  }
+ });
+ 
+ app.delete("/department/:id", async (req, res) => {
+  try {
+    const { params } = req;
+    await Department.destroy({ where: { id: params.id } });
+    res.send("Deleted successfully");
+  } catch (error) {
+    console.log(error);
+  }
+ })
 
-const express = require ( "express" );
-const app = express ();
-const db = require ( "./database" );
-app . use ( express . json ());
-app . post ( "/waiter" , async ( req , res ) => {
-try {
-const { body } = req ;
-await db . query ( "CREATE table if not exists waiters( id serial primary key, name varchar(30), email varchar(100), mobile int)" );
-const waiter = await db . query ( "INSERT into waiters (name, email, mobile) values($1, $2, $3) returning *" , [ body . name , body . email , body . mobile ]);
-console . log ( "waiter" , waiter );
-res . send ( waiter . rows [ 0 ]);
-} catch ( error ) {
-console . log ( error );
-}
-});
-module . exports = app ;
+module.exports = app;
