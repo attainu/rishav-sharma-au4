@@ -136,7 +136,7 @@ app . get ( "/waiters" , async ( req , res ) => {
             app . post ( "/menu" , async ( req , res ) => {
                 try {
                 const { body } = req ;
-                let menu = await Menu . create ({ name: body . name,mobile: body . mobile });
+                let menu = await Menu . create ({ itemname: body . itemname,cuisinename: body . cuisinename,choosevegornon:body .choosevegornon,itemprice: body . itemprice });
                 res . send ( menu );
                 } catch ( error ) {
                 console . log ( error );
@@ -157,7 +157,7 @@ app . get ( "/waiters" , async ( req , res ) => {
                     try {
                     const { body , params } = req ;
                     
-                    let menu = await Menu . update ({ name: body . name,mobile: body . mobile}, {
+                    let menu = await Menu . update ({ itemname: body . itemname,cuisinename: body . cuisinename,choosevegornon:body .choosevegornon,itemprice: body . itemprice}, {
                     where: { id: params . id } });
                     res . send ( Menu );
                     } catch ( error ) {
