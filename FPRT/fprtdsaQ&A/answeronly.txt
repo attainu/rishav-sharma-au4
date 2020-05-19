@@ -1,0 +1,187 @@
+q.1-What is Multithreading and asynchronous programming? 
+
+ans-1>Multithreading programming-
+Multithreading is the ability of a program or an operating system process to manage its use by more than one user at
+ a time and to even manage multiple requests by the same user without having to have multiple copies of the programming 
+ running in the computer.
+Asynchronous programming-
+Asynchronous programming is a means of parallel programming in which a unit of work runs separately from the main 
+application thread and notifies the calling thread of its completion, failure or progress. 
+You may be wondering when you should use asynchronous programming and what are its benefits and problem points.
+
+q.2-What is the difference between a thread and a process?
+
+ans-2>
+Parameter	                              Process	                                                                Thread
+Definition	                     Process means a program is in execution.	                              Thread means a segment of a process.
+Lightweight	                     The process is not Lightweight.	                                          Threads are Lightweight.
+Termination time	            The process takes more time to terminate.	                              The thread takes less time to terminate.
+Creation time	                 It takes more time for creation.	                                      It takes less time for creation.
+Communication	                Communication between processes needs more time compared to thread.	      Communication between threads requires less time compared to processes.
+Context switching time       	It takes more time for context switching.	                          It takes less time for context switching.
+Resource	                    Process consume more resources.	                                                  Thread consume fewer resources.
+Treatment by OS	                Different process are tread separately by OS.	                              All the level peer threads are treated as a single task by OS.
+Memory                       	The process is mostly isolated.	                                                      Threads share memory.
+Sharing	                        It does not share data	                                                              Threads share data with each other.
+
+q.3-Explain the Producer-Consumer problem?
+q.4-What is deadlock and four necessary conditions for deadlock?  
+q.5-Explain the implementation of Virtual memory?
+
+Ans-5>It is a technique that is implemented using both hardware and software. It maps memory addresses used by a program, called virtual addresses, into physical addresses in computer memory.
+
+All memory references within a process are logical addresses that are dynamically translated into physical addresses at run time. This means that a process can be swapped in and out of main memory such that it occupies different places in main memory at different times during the course of execution.
+A process may be broken into number of pieces and these pieces need not be continuously located in the main memory during execution. The combination of dynamic run-time address translation and use of page or segment table permits this.
+If these characteristics are present then, it is not necessary that all the pages or segments are present in the main memory during execution. This means that the required pages need to be loaded into memory whenever required. Virtual memory is implemented using Demand Paging or Demand Segmentation.
+
+q.6-What is Cache?  
+
+Ans-6>Cache Memory is a special very high-speed memory. It is used to speed up and synchronizing with high-speed CPU. Cache memory is costlier than main memory or disk memory but economical than CPU registers. Cache memory is an extremely fast memory type that acts as a buffer between RAM and the CPU. It holds frequently requested data and instructions so that they are immediately available to the CPU when needed.
+
+q.7-Where does cache lie in an Operating System?
+
+Ans-7>Cache memory, lies in between CPU and the Main memory. It is also called CPU memory, that a computer microprocessor can access more quickly than it can access regular RAM. This memory is typically integrated directly with the CPU chip or placed on a separate chip that has a separate bus interconnect with the CPU.
+
+q.8-Difference between Cache and HashMap. 
+
+Ans-8>A hash maps a set of objects to a set of integers. If the hash is any good, that set of integers will be uniformly distributed over their range. A cache stores copies of expensive-to-access resources in much faster local storage.
+
+q.9-What are the properties of RDBMS?
+
+Ans-9>Relational databases have the following properties:
+
+Values are atomic.
+All of the values in a column have the same data type.
+Each row is unique.
+The sequence of columns is insignificant.
+The sequence of rows is insignificant.
+Each column has a unique name.
+Integrity constraints maintain data consistency across multiple tables.
+
+q.10-What are ACID properties? 
+
+Ans-10>A transaction is a single logical unit of work which accesses and possibly modifies the contents of a database. Transactions access data using read and write operations.
+In order to maintain consistency in a database, before and after the transaction, certain properties are followed. These are called ACID properties.
+
+q.11-Difference between Vertical and Horizontal Scaling. 
+
+Ans-11>
+HORIZONTAL SCALING	                                                                                                             VERTICAL SCALING
+When new server racks are added in the existing system to meet the higher expectation, it is known as horizontal scaling.	When new resources are added in the existing system to meet the expectation, it is known as vertical scaling
+It expands the size of the existing system horizontally.	                                                                It expands the size of the existing system vertically.
+It is difficult to implement	                                                                                            It is easy to implement
+It is costlier, as new server racks comprises of a lot of resources	                                                        It is cheaper as we need to just add new resources
+It takes more time to be done	                                                                                            It takes less time to be done
+
+q.12.What is sharding? 
+
+Ans-12>Sharding is a very important concept which helps the system to keep data into different resources according to the sharding process.
+
+The word “Shard” means “a small part of a whole“. Hence Sharding means dividing a larger part into smaller parts.
+
+In DBMS, Sharding is a type of DataBase partitioning in which a large DataBase is divided or partitioned into smaller data, also known as shards. These shards are not only smaller, but also faster and hence easily manageable.
+
+
+q.13.What is the CAP theorem? 
+q.14.What is normalization and denormalization and why do we need it? 
+q.15.Difference between inner and outer join?
+
+Ans-15>
+S.NO	INNER JOIN	                                                                                     OUTER JOIN
+1.	 It returns the combined tuple between two or more tables.	                           It returns the combined tuple from a specified table even join condition will fail.
+2.	 Used clause INNER JOIN and JOIN.	                                                   Used clause LEFT OUTER JOIN, RIGHT OUTER JOIN, FULL OUTER JOIN, etc.
+3.	 When any attributes are not common then it will return nothing.	                   It does not depend upon the common attributes. If the attribute is blank then here already placed NULL.
+4.	If tuples are more. Then INNER JOIN works faster than OUTER JOIN.	                   Generally, The OUTER JOIN is slower than INNER JOIN. But except for some special cases.
+5.	It is used when we want detailed information about any specific attribute.             It is used when we want to complete information.
+6.	JOIN and INNER JOIN both clauses work the same.	                                       FULL OUTER JOIN and FULL JOIN both clauses work the same.
+7.	SQL Syntax:
+select *
+from table1 INNER JOIN / JOIN table2
+ON table1.column_name = table2.column_name;	SQL Syntax:
+select *
+from table1 LEFT OUTER JOIN / RIGHT OUTER JOIN /
+FULL OUTER JOIN / FULL JOIN table2 ON
+table1.column_name = table2.column_name;
+
+q.16.What is the difference between TCP and UDP?
+Explain their use.
+
+Ans-16>
+TRANSMISSION CONTROL PROTOCOL (TCP)	                                                                  USER DATAGRAM PROTOCOL (UDP)
+TCP is a connection-oriented protocol.                                                  Connection-orientation means that the communicating devices should establish a connection before transmitting data and should close the connection after transmitting the data.	UDP is the Datagram oriented protocol. This is because there is no overhead for opening a connection, maintaining a connection, and terminating a connection. UDP is efficient for broadcast and multicast type of network transmission.
+TCP is reliable as it guarantees delivery of data to the destination router.	        The delivery of data to the destination cannot be guaranteed in UDP.
+TCP provides extensive error checking mechanisms.                                       It is because it provides flow control and acknowledgment of data.	UDP has only the basic error checking mechanism using checksums.
+Sequencing of data is a feature of Transmission Control Protocol (TCP).
+this means that packets arrive in-order at the receiver.	                            There is no sequencing of data in UDP. If ordering is required, it has to be managed by the application layer.
+TCP is comparatively slower than UDP.	                                                 UDP is faster, simpler and more efficient than TCP.
+Retransmission of lost packets is possible in TCP, but not in UDP.	                     There is no retransmission of lost packets in User Datagram Protocol (UDP).
+TCP has a (20-80) bytes variable length header.	                                          UDP has a 8 bytes fixed length header.
+TCP is heavy-weight.	                                                                   UDP is lightweight.
+TCP doesn’t supports Broadcasting.	                                                           UDP supports Broadcasting.
+TCP is used by HTTP, HTTPs, FTP, SMTP and Telnet.	                                     UDP is used by DNS, DHCP, TFTP, SNMP, RIP, and VoIP.
+
+q.17.What is the difference between http and https?
+
+Ans-17.>In HTTP, URL begins with “http://” whereas URL starts with “https://”
+HTTP uses port number 80 for communication and HTTPS uses 443
+HTTP is considered to be unsecure and HTTPS is secure
+HTTP Works at Application Layer and HTTPS works at Transport Layer
+In HTTP, Encryption is absent and Encryption is present in HTTPS as discussed above
+HTTP does not require any certificates and HTTPS needs SSL Certificates
+
+q.18.What are ports? Name some default port of your favourite database. ?
+
+Ans.18->A network port is a process-specific or an application-specific software construct serving as a communication endpoint, which is used by the Transport Layer protocols of Internet Protocol suite, such as User Diagram Protocol (UDP) and Transmission Control Protocol (TCP).
+my fac port is 8080.
+
+q.19.Explain DNS. 
+
+Ans.19->An application layer protocol defines how the application processes running on different systems, pass the messages to each other.
+
+DNS stands for Domain Name System.
+DNS is a directory service that provides a mapping between the name of a host on the network and its numerical address.
+DNS is required for the functioning of the internet.
+Each node in a tree has a domain name, and a full domain name is a sequence of symbols specified by dots.
+DNS is a service that translates the domain name into IP addresses. This allows the users of networks to utilize user-friendly names when looking for other hosts instead of remembering the IP addresses.
+For example, suppose the FTP site at EduSoft had an IP address of 132.147.165.50, most people would reach this site by specifying ftp.EduSoft.com. Therefore, the domain name is more reliable than IP address.
+
+q.20.Explain firewall. 
+
+Ans-20->A firewall is a network security device, either hardware or software-based, which monitors all incoming and outgoing traffic and based on a defined set of security rules it accepts, rejects or drops that specific traffic.
+
+Accept : allow the traffic
+Reject : block the traffic but reply with an “unreachable error”
+Drop : block the traffic with no reply
+
+q.21.Explain CAP theorem?
+q.22.What is Sharding, When it is used
+
+Ans-22->Sharding is a very important concept which helps the system to keep data into different resources according to the sharding process.
+
+The word “Shard” means “a small part of a whole“. Hence Sharding means dividing a larger part into smaller parts.
+
+In DBMS, Sharding is a type of DataBase partitioning in which a large DataBase is divided or partitioned into smaller data, also known as shards. These shards are not only smaller, but also faster and hence easily manageable.
+
+q.23.What is a load balancer?  How it is useful
+
+ans.23>A load balancer is a device that acts as a reverse proxy and distributes network or application traffic across a number of servers.
+
+q.24.What is Encryption and hashing? 
+
+Ans.24>Encryption :
+Encryption in encoding technique in which message is encoded by using encryption algorithm in such a way that only authorized personnel can access the message or information.
+
+It is a special type of encoding that is used for transferring private data, for example sending a combination of username and password over the internet for email login.
+
+In encryption, data to be encrypted(called plain-text) is transformed using an encryption algorithm like AES encryption or RSA encryption using a secret key called cipher. The encrypted data is called cipher-text, and finally, the secret key can be used by the intended recipient to convert it back to plain-text.
+
+Hashing :
+In hashing, data is converted to the hash using some hashing function, which can be any number generated from string or text. Various hashing algorithms are MD5, SHA256. Data once hashed is non-reversible.
+
+Hash function can be any function that is used to map data of arbitrary size to data of fixed size. The data structure hash table is used for storing of data.
+
+q.25-What is oauth2? 
+
+Ans-25>OAuth 2.0 is the industry-standard protocol for authorization. OAuth 2.0 focuses on client developer simplicity while 
+providing specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. 
+This specification and its extensions are being developed within the IETF OAuth Working Group.
