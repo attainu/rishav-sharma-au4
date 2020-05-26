@@ -83,7 +83,7 @@ class SignInForm extends React.Component {
           </FormItem>
           <ErrorMessage>{error}</ErrorMessage>
         </Form>
-        <p>emailid:shekharrishav@ymail.com and password:8013377134</p>
+        <p>emailid:test999@ymail.com and password:123123</p>
       </FormContainer>
     );
   }
