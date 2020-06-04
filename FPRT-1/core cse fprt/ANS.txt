@@ -1,0 +1,240 @@
+Difference between fork() and exec() ?
+Ans->
+fork()
+The fork system call generates a dublicate copy of the calling process.
+The new Process created by a fork system call is  identical to the parent process in almost all respect.
+After the fork system call,both the child and the parent processes will be executed simultaneously.
+Ex- int process_id=fork();
+
+exec()
+The exec system call is used to replace the entire current calling process with a new program altogether.
+The new program which replaces the current process is loaded and is run from the entry point.
+After the exec System call the control never get transferred to the original program until and unless an exec() error does not happen.
+
+Ex- int execvp (const char *file_name, char *cont argv[]);
+
+What is context Switching?
+
+Ans->
+Context Switching involves storing the context or state of a process so that it can be reloaded when required and execution can be 
+resumed from the same point as earlier. This is a feature of a multitasking operating system and allows a single CPU to be shared by 
+multiple processes.
+
+What are the valid deadlock prevention schemes?
+Ans->
+Aborting a transaction is not always a practical approach. Instead, deadlock avoidance mechanisms can be used to detect any deadlock 
+situation in advance. Methods like "wait-for graph" are available but they are suitable for only those systems where transactions are 
+lightweight having fewer instances of resource. In a bulky system, deadlock prevention techniques may work well.
+
+Wait-for Graph
+This is a simple method available to track if any deadlock situation may arise. For each transaction entering into the system, a node 
+is created. When a transaction Ti requests for a lock on an item, say X, which is held by some other transaction Tj, a directed edge 
+is created from Ti to Tj. If Tj releases item X, the edge between them is dropped and Ti locks the data item.
+
+The system maintains this wait-for graph for every transaction waiting for some data items held by others. The system keeps checking if
+ there's any cycle in the graph.
+
+ Here, we can use any of the two following approaches −
+
+First, do not allow any request for an item, which is already locked by another transaction. This is not always feasible and may 
+cause starvation, where a transaction indefinitely waits for a data item and can never acquire it.
+
+The second option is to roll back one of the transactions. It is not always feasible to roll back the younger transaction, as it may 
+be important than the older one. With the help of some relative algorithm, a transaction is chosen, which is to be aborted. This 
+transaction is known as the victim and the process is known as victim selection.
+
+What is the Seven Layer Reference OSI Model and what are its uses?
+Ans->
+
+What are Content Delivery Networks?
+Ans->
+A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery 
+of Internet content.
+
+A CDN allows for the quick transfer of assets needed for loading Internet content including HTML pages, javascript files, stylesheets, 
+images, and videos. The popularity of CDN services continues to grow, and today the majority of web traffic is served through CDNs, 
+including traffic from major sites like Facebook, Netflix, and Amazon.
+
+What are normalization and denormalization and why do we need it?
+Ans->
+Normalization:
+Normalization is the method used in a database to reduce the data redundancy and data inconsistency from the table. It is the technique 
+in which Non-redundancy and consistency data are stored in the set schema. By using normalization the number of tables is increased 
+instead of decreased.
+
+Denormalization:
+Denormalization is also the method which is used in a database. It is used to add the redundancy to execute the query quickly. It is a 
+technique in which data are combined to execute the query quickly. By using denormalization the number of tables is decreased which 
+oppose to the normalization.
+
+WHY WE NEED NORMALIZATION?
+Normalization is the aim of well design Relational Database Management System (RDBMS). It is step by step set of rules by which data is
+put in its simplest forms. We normalize the relational database management system because of the following reasons:
+
+• Minimize data redundancy i.e. no unnecessarily duplication of data.
+• To make database structure flexible i.e. it should be possible to add new data values and rows without reorganizing the database
+ structure.
+• Data should be consistent throughout the database i.e. it should not suffer from following anomalies.
+
+• Insert Anomaly - Due to lack of data i.e., all the data available for insertion such that null values in keys should be avoided.
+ This kind of anomaly can seriously damage a database
+• Update Anomaly - It is due to data redundancy i.e. multiple occurrences of same values in a column. This can lead to inefficiency.
+• Deletion Anomaly - It leads to loss of data for rows that are not stored else where. It could result in loss of vital data.
+• Complex queries required by the user should be easy to handle.
+
+On decomposition of a relation into smaller relations with fewer attributes on normalization the resulting relations whenever joined 
+must result in the same relation without any extra rows. The join operations can be performed in any order. This is known as Lossless 
+Join decomposition.
+
+The resulting relations (tables) obtained on normalization should possess the properties such as each row must be identified by a 
+unique key, no repeating groups, homogenous columns, each column is assigned a unique name etc.
+
+why do we need it Denormalization?
+As with almost anything, you must be sure why you want to apply denormalization. You need to also be sure that the profit from using 
+it outweighs any harm. There are a few situations when you definitely should think of denormalization:
+
+Maintaining history: Data can change during time, and we need to store values that were valid when a record was created. What kind 
+of changes do we mean? Well, a person’s first and last name can change; a client also can change their business name or any other data.
+ Task details should contain values that were actual at the moment a task was generated. We wouldn’t be able to recreate past data
+  correctly if this didn’t happen. We could solve this problem by adding a table containing the history of these changes. In that case,
+   a select query returning the task and a valid client name would become more complicated. Maybe an extra table isn’t the best solution.
+Improving query performance: Some of the queries may use multiple tables to access data that we frequently need. Think of a situation 
+where we’d need to join 10 tables to return the client’s name and the products that were sold to them. Some tables along the path could 
+also contain large amounts of data. In that case, maybe it would be wise to add a client_id attribute directly to the products_sold table.
+Speeding up reporting: We need certain statistics very frequently. Creating them from live data is quite time-consuming and can affect 
+overall system performance. Let’s say that we want to track client sales over certain years for some or all clients. 
+Generating such reports out of live data would “dig” almost throughout the whole database and slow it down a lot. And what happens
+ if we use that statistic often?
+Computing commonly-needed values up front: We want to have some values ready-computed so we don’t have to generate them in real time.
+
+What are the different types of JOIN in DBMS?
+Ans->
+Join in DBMS is a binary operation which allows you to combine join product and selection in one single statement. The goal of creating a join condition is that it 
+helps you to combine the data from two or more DBMS tables. The tables in DBMS are associated using the primary key and foreign keys.
+
+Types of Join
+There are mainly two types of joins in DBMS:
+
+Inner Joins: Theta, Natural, EQUI
+Outer Join: Left, Right, Full
+
+Inner Join
+INNER JOIN is used to return rows from both tables which satisfy the given condition. It is the most widely used join operation and can be considered as a default
+ join-type
+
+An Inner join or equijoin is a comparator-based join which uses equality comparisons in the join-predicate. However, if you use other comparison operators like ">" it
+ can't be called equijoin.
+
+Inner Join further divided into three subtypes:
+
+Theta join
+Natural join
+EQUI join
+Theta Join
+THETA JOIN allows you to merge two tables based on the condition represented by theta. Theta joins work for all comparison operators. It is denoted by symbol θ.
+ The general case of JOIN operation is called a Theta join.
+
+EQUI Join
+EQUI JOIN is done when a Theta join uses only the equivalence condition. EQUI join is the most difficult operation to implement efficiently in an RDBMS, and one reason 
+why RDBMS have essential performance problems.
+
+Natural Join
+NATURAL JOIN does not utilize any of the comparison operators. In this type of join, the attributes should have the same name and domain. In Natural Join, there should
+ be at least one common attribute between two relations.
+
+It performs selection forming equality on those attributes which appear in both relations and eliminates the duplicate attributes.
+
+Outer Join
+An OUTER JOIN doesn't require each record in the two join tables to have a matching record. In this type of join, the table retains each record even if no other
+ matching record exists.
+
+Three types of Outer Joins are:
+
+Left Outer Join
+Right Outer Join
+Full Outer Join
+
+Left Outer Join
+LEFT JOIN returns all the rows from the table on the left even if no matching rows have been found in the table on the right. When no matching record found in the table 
+on the right, NULL is returned.
+
+Right Outer Join
+RIGHT JOIN returns all the columns from the table on the right even if no matching rows have been found in the table on the left. Where no matches have been found in 
+the table on the left, NULL is returned. RIGHT outer JOIN is the opposite of LEFT JOIN
+
+Full Outer Join
+In a FULL OUTER JOIN , all tuples from both relations are included in the result, irrespective of the matching condition.
+
+What is the difference b/w private IP and Public IP? 
+Ans->
+PRIVATE IP ADDRESS
+Scope is local.
+It is used to communicate within the network.
+Private IP addresses of the systems connected in a network differ in a uniform manner.
+It works only in LAN.
+It is used to load network operating system.
+It is available in free of cost.
+Private IP can be known by entering “ipconfig” on command prompt.
+Range:
+10.0.0.0 – 10.255.255.255, 
+172.16.0.0 – 172.31.255.255, 
+192.168.0.0 – 192.168.255.255 
+Example: 192.168.1.10
+
+PUBLIC IP ADDRESS
+Scope is global.
+It is used to communicate outside the network.
+Public IP may differ in uniform or non-uniform manner.
+It is used to get internet service.
+It is controlled by ISP.
+It is not free of cost.
+Public IP can be known by searching “what is my ip” on google.
+Range:
+Besides private IP addresses, rest are public.
+Example: 17.5.7.8
+
+Difference between semaphore and mutex?
+Ans->
+ Mutex:
+
+A mutex provides mutual exclusion, either producer or consumer can have the key (mutex) and proceed with their work. As long as the buffer is filled by producer, 
+the consumer needs to wait, and vice versa.
+
+At any point of time, only one thread can work with the entire buffer. The concept can be generalized using semaphore.
+
+Semaphore:
+
+A semaphore is a generalized mutex. In lieu of single buffer, we can split the 4 KB buffer into four 1 KB buffers (identical resources). A semaphore can be associated with these four buffers.
+ The consumer and producer can work on different buffers at the same time.
+
+
+Difference between TCP and UDP?
+Ans->
+TRANSMISSION CONTROL PROTOCOL (TCP)
+TCP is a connection-oriented protocol. Connection-orientation means that the communicating devices should establish a connection before transmitting data and
+ should close the connection after transmitting the data.
+TCP is reliable as it guarantees delivery of data to the destination router.
+TCP provides extensive error checking mechanisms. It is because it provides flow control and acknowledgment of data.
+Sequencing of data is a feature of Transmission Control Protocol (TCP). this means that packets arrive in-order at the receiver.
+TCP is comparatively slower than UDP.
+Retransmission of lost packets is possible in TCP, but not in UDP.
+TCP has a (20-80) bytes variable length header.
+TCP is heavy-weight.
+TCP doesn’t supports Broadcasting.
+TCP is used by HTTP, HTTPs, FTP, SMTP and Telnet.
+
+
+USER DATAGRAM PROTOCOL (UDP)
+UDP is the Datagram oriented protocol. This is because there is no overhead for opening a connection, maintaining a connection, and terminating a connection. UDP is
+ efficient for broadcast and multicast type of network transmission.
+The delivery of data to the destination cannot be guaranteed in UDP.
+UDP has only the basic error checking mechanism using checksums.
+There is no sequencing of data in UDP. If ordering is required, it has to be managed by the application layer.
+UDP is faster, simpler and more efficient than TCP.
+There is no retransmission of lost packets in User Datagram Protocol (UDP).
+UDP has a 8 bytes fixed length header.
+UDP is lightweight.
+UDP supports Broadcasting.
+UDP is used by DNS, DHCP, TFTP, SNMP, RIP, and VoIP.
+
+
