@@ -27,7 +27,7 @@ function App() {
         <Route path="/orders" component={Orders} />
         <Route path="/user/:username" component={UsersPage} />
         <Route path="/order/:OrderID" component={OrderPage} />
-        <Route path="/product/:ProductID" component={ProductPage} />
+        <Route path="/product/:ProductId" component={ProductPage} />
         </Switch>
       </Router>
   );
